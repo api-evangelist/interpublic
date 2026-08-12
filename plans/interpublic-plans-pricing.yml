@@ -1,0 +1,26 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  probes of every reachable Interpublic Group host, 2026-08-12 - no pricing
+  page exists to search
+plan_count: 0
+plans: []
+note: >-
+  Interpublic Group sells advertising and marketing services, not API access,
+  and publishes no developer pricing of any kind - no plans page, no
+  self-serve tier, not even an enterprise "contact us" API page.
+  developer.interpublic.com and docs.interpublic.com do not resolve;
+  www.interpublic.com 301-redirects every HTML path to omc.com. The one live
+  API surface, the WordPress REST API on the apex host, is a byproduct of the
+  corporate website and is offered under no commercial terms at all. This is
+  an honest zero.
+evidence:
+  - url: https://developer.interpublic.com/
+    status: 0
+    note: DNS does not resolve
+  - url: https://www.interpublic.com/
+    status: 301
+    note: terminates at https://www.omc.com/
+  - url: https://interpublic.com/wp-json/
+    status: 200
+    note: 'live API surface, no commercial terms attached'

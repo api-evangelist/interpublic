@@ -1,0 +1,35 @@
+generated: '2026-08-12'
+method: generated
+source: >-
+  openapi/interpublic-*-api-openapi.yml (derived from
+  https://interpublic.com/wp-json/) plus live probe results 2026-08-12
+note: >-
+  Packaged Agent Skills authored by API Evangelist, not published by
+  Interpublic Group. Every operationId referenced was grepped out of the specs
+  in openapi/; none is invented.
+skills:
+  - name: interpublic-read-newsroom
+    file: interpublic-read-newsroom.md
+    api: interpublic:wp-v2-api
+    summary: >-
+      Read and page the 346-post corporate newsroom archive, resolve terms and
+      media, and avoid the www redirect trap in the Link rel="next" header.
+    operations:
+      - getWpV2Posts
+      - getWpV2PostsById
+      - getWpV2Categories
+      - getWpV2Tags
+      - getWpV2MediaById
+      - getWpV2Search
+  - name: interpublic-discover-surface
+    file: interpublic-discover-surface.md
+    api: interpublic:root-api
+    summary: >-
+      Read the route-discovery document as the authoritative contract, split
+      core namespaces from plugin noise, control-test the gated Abilities
+      surface, and recognise the three dead-end hosts.
+    operations:
+      - getWpJsonIndex
+      - getWpV2Types
+      - getWpAbilitiesV1Abilities
+      - getOembed10Embed

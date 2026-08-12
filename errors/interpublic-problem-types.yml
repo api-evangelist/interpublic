@@ -1,0 +1,60 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  live anonymous responses from https://interpublic.com/wp-json/* (2026-08-12);
+  envelope shape cross-checked against the WordPress REST API Handbook
+docs: https://developer.wordpress.org/rest-api/using-the-rest-api/global-parameters/
+format: wp-rest-error
+rfc9457: false
+note: >-
+  This API does not use RFC 9457 `application/problem+json`. Every error is
+  returned as `application/json` carrying the WordPress error envelope
+  {code, message, data:{status}}. Only the codes below were observed live on
+  this host; the WordPress core error registry is much larger, and codes are
+  not enumerated for operations that could not be exercised anonymously.
+  Nothing here is copied from generic WordPress documentation without an
+  observed response on this host.
+envelope:
+  content_type: application/json
+  schema: openapi/interpublic-wp-v2-api-openapi.yml#/components/schemas/WPError
+  fields:
+    - name: code
+      type: string
+      description: Machine-readable WordPress error slug.
+    - name: message
+      type: string
+      description: Human-readable message. Not stable; do not match on it.
+    - name: data.status
+      type: integer
+      description: HTTP status, repeated inside the body.
+problems:
+  - status: 401
+    code: rest_forbidden
+    title: Sorry, you are not allowed to do that.
+    remediation: >-
+      The operation requires a WordPress capability. Third parties cannot
+      obtain one; treat these routes as unavailable.
+    observed_on:
+      - GET /wp-json/wp/v2/settings
+      - GET /wp-json/wp-abilities/v1/abilities
+      - GET /wp-json/wp-abilities/v1/categories
+    evidence: 'live probe 2026-08-12'
+  - status: 401
+    code: rest_user_cannot_view
+    title: Sorry, you are not allowed to list users.
+    remediation: >-
+      Author identity is exposed indirectly through the `author` field on
+      posts; the user collection itself is closed on this install.
+    observed_on:
+      - GET /wp-json/wp/v2/users
+    evidence: 'live probe 2026-08-12'
+  - status: 404
+    code: rest_no_route
+    title: No route was found matching the URL and request method.
+    remediation: >-
+      Re-read the route-discovery document at https://interpublic.com/wp-json/
+      - it is authoritative for which of the 254 routes exist on this install.
+    observed_on:
+      - GET /wp-json/wp/v2/nonexistent
+      - GET /wp-json/mcp
+    evidence: 'live probe 2026-08-12'

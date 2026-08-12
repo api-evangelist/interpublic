@@ -1,0 +1,192 @@
+openapi: 3.2.0
+info:
+  title: Interpublic Group WordPress REST oembed/1.0 API
+  version: oembed/1.0
+  summary: The live WordPress REST API served by the Interpublic Group corporate website.
+  description: 'Derived verbatim from the route-discovery document the Interpublic Group web server publishes
+    at https://interpublic.com/wp-json/ (fetched 2026-08-12, HTTP 200). Every path, method, parameter
+    name, type, default and enum in this document was read from that live response; nothing was invented.
+
+
+    This is the content-management API of the corporate marketing site, not a product API. Interpublic
+    Group is an advertising and marketing-services holding company and publishes no developer product
+    API at the holding-company level. The surface is included because it is a real, live, self-describing
+    HTTP contract on the provider''s own host: the apex https://interpublic.com still serves the WordPress
+    origin (346 posts, X-WP-Total observed) while www.interpublic.com 301-redirects to omc.com following
+    the Omnicom acquisition.
+
+
+    Only the WordPress core namespaces are represented (`wp/v2`, `wp-abilities/v1`, `oembed/1.0`, root).
+    Third-party plugin namespaces advertised by the same discovery document (yoast/v1, redirection/v1,
+    webdev-insight/v1, wordfence/v1, accessibility-suite/v1, aam/v2, wp-offload-media/v1, wpe_sign_on_plugin/v1,
+    wpe/cache-plugin/v1, wr/v1, fluent-smtp, ada-plugin/v1, wp-site-health/v1, wp-block-editor/v1) are
+    intentionally excluded as vendor plugin internals.'
+  x-derived-from: https://interpublic.com/wp-json/
+  x-derived-on: '2026-08-12'
+  x-apievangelist-method: derived
+servers:
+- url: https://interpublic.com
+  description: Production origin (apex host; www 301s to omc.com)
+tags:
+- name: oembed/1.0
+  description: oEmbed discovery and proxy endpoints.
+paths:
+  /wp-json/oembed/1.0:
+    get:
+      operationId: getOembed10
+      summary: GET /oembed/1.0
+      description: WordPress REST API route `/oembed/1.0` in namespace `oembed/1.0`, as advertised by
+        the live route-discovery document at https://interpublic.com/wp-json/.
+      tags:
+      - oembed/1.0
+      parameters:
+      - name: namespace
+        in: query
+        schema:
+          default: oembed/1.0
+      - name: context
+        in: query
+        schema:
+          default: view
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+  /wp-json/oembed/1.0/embed:
+    get:
+      operationId: getOembed10Embed
+      summary: GET /oembed/1.0/embed
+      description: WordPress REST API route `/oembed/1.0/embed` in namespace `oembed/1.0`, as advertised
+        by the live route-discovery document at https://interpublic.com/wp-json/.
+      tags:
+      - oembed/1.0
+      parameters:
+      - name: url
+        in: query
+        schema:
+          type: string
+        required: true
+        description: The URL of the resource for which to fetch oEmbed data.
+      - name: format
+        in: query
+        schema:
+          default: json
+      - name: maxwidth
+        in: query
+        schema:
+          default: 600
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+  /wp-json/oembed/1.0/proxy:
+    get:
+      operationId: getOembed10Proxy
+      summary: GET /oembed/1.0/proxy
+      description: WordPress REST API route `/oembed/1.0/proxy` in namespace `oembed/1.0`, as advertised
+        by the live route-discovery document at https://interpublic.com/wp-json/.
+      tags:
+      - oembed/1.0
+      parameters:
+      - name: url
+        in: query
+        schema:
+          type: string
+        required: true
+        description: The URL of the resource for which to fetch oEmbed data.
+      - name: format
+        in: query
+        schema:
+          type: string
+          enum:
+          - json
+          - xml
+          default: json
+        description: The oEmbed format to use.
+      - name: maxwidth
+        in: query
+        schema:
+          type: integer
+          default: 600
+        description: The maximum width of the embed frame in pixels.
+      - name: maxheight
+        in: query
+        schema:
+          type: integer
+        description: The maximum height of the embed frame in pixels.
+      - name: discover
+        in: query
+        schema:
+          type: boolean
+          default: true
+        description: Whether to perform an oEmbed discovery request for unsanctioned providers.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+components:
+  schemas:
+    WPError:
+      type: object
+      description: The WordPress REST API error envelope, observed verbatim on live 401/404 responses
+        from this host. Not RFC 9457 problem+json.
+      properties:
+        code:
+          type: string
+          examples:
+          - rest_forbidden
+          - rest_no_route
+          - rest_user_cannot_view
+        message:
+          type: string
+          examples:
+          - Sorry, you are not allowed to do that.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              examples:
+              - 401

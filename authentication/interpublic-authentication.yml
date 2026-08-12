@@ -1,0 +1,66 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  live anonymous probes of https://interpublic.com/wp-json/* (2026-08-12) plus
+  the WordPress REST API Handbook authentication reference
+docs: https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/
+summary:
+  types:
+    - none
+    - cookie
+  api_key_in: []
+  oauth2_flows: []
+  note: >-
+    The four specs in openapi/ declare no `securitySchemes`, and that is
+    faithful to the surface: WordPress core advertises no authentication
+    scheme in its route-discovery document. The live discovery document's
+    `authentication` array is empty ([]), meaning no authentication plugin is
+    registered on this install. Read access is anonymous; write access and
+    privileged reads are gated by the WordPress cookie + `X-WP-Nonce` scheme,
+    which is only obtainable from an authenticated wp-admin session and is
+    not usable by a third-party integrator. There is therefore no
+    machine-issued credential a developer can obtain for this API.
+schemes:
+  - name: anonymous
+    type: none
+    applies_to:
+      - GET /wp-json/
+      - GET /wp-json/wp/v2/posts
+      - GET /wp-json/wp/v2/pages
+      - GET /wp-json/wp/v2/media
+      - GET /wp-json/wp/v2/categories
+      - GET /wp-json/wp/v2/tags
+      - GET /wp-json/wp/v2/types
+      - GET /wp-json/wp/v2/search
+      - GET /wp-json/oembed/1.0/embed
+    evidence: 'observed HTTP 200 without credentials, 2026-08-12'
+  - name: wordpress-cookie-nonce
+    type: cookie
+    description: >-
+      WordPress core's built-in scheme - a logged-in session cookie plus an
+      `X-WP-Nonce` request header. Documented in the WordPress REST API
+      Handbook. Intended for first-party JavaScript inside wp-admin; not a
+      credential a third party can be issued.
+    parameter: X-WP-Nonce
+    in: header
+    docs: https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/
+    applies_to:
+      - GET /wp-json/wp/v2/users
+      - GET /wp-json/wp/v2/settings
+      - GET /wp-json/wp-abilities/v1/abilities
+      - GET /wp-json/wp-abilities/v1/categories
+      - all POST/PUT/PATCH/DELETE operations
+    evidence: >-
+      observed HTTP 401 without credentials with body
+      {"code":"rest_forbidden","message":"Sorry, you are not allowed to do
+      that.","data":{"status":401}} (settings, abilities) and
+      {"code":"rest_user_cannot_view",...} (users), 2026-08-12
+oauth:
+  present: false
+  evidence: >-
+    /.well-known/oauth-authorization-server and
+    /.well-known/oauth-protected-resource both 301 away from the origin and
+    terminate on the Omnicom HTML homepage; no RFC 8414 or RFC 9728 metadata
+    is served on any Interpublic Group host. No `mcp` namespace is registered
+    in the route-discovery document either, so there is no OAuth 2.1 surface
+    of the kind other WordPress installs in this catalog expose.

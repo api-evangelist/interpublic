@@ -1,0 +1,105 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  live responses and headers from https://interpublic.com/wp-json/*
+  (2026-08-12), plus openapi/interpublic-wp-v2-api-openapi.yml derived from
+  the route-discovery document
+docs: https://developer.wordpress.org/rest-api/using-the-rest-api/
+auth:
+  style: none-for-reads
+  detail: >-
+    Anonymous reads; privileged reads and all writes require the WordPress
+    cookie + X-WP-Nonce session. See authentication/interpublic-authentication.yml.
+idempotency:
+  supported: false
+  detail: >-
+    No idempotency key header, no idempotent-write scheme, and no retry
+    semantics are advertised anywhere in the route-discovery document or
+    returned in response headers. WordPress core has no idempotency
+    mechanism. No `Idempotency` pointer is emitted in apis.yml.
+pagination:
+  style: page-number
+  parameters:
+    - name: page
+      in: query
+      default: 1
+      description: Current page of the collection.
+    - name: per_page
+      in: query
+      default: 10
+      description: Maximum number of items to be returned in result set.
+    - name: offset
+      in: query
+      description: Offset the result set by a specific number of items.
+  response_headers:
+    - name: X-WP-Total
+      description: Total number of items in the collection.
+      observed: '346 on GET /wp-json/wp/v2/posts, 2026-08-12'
+    - name: X-WP-TotalPages
+      description: Total number of pages at the requested per_page.
+      observed: '173 on GET /wp-json/wp/v2/posts?per_page=2, 2026-08-12'
+    - name: Link
+      description: RFC 8288 link header carrying rel="next" / rel="prev".
+      observed: >-
+        <https://www.interpublic.com/wp-json/wp/v2/posts?per_page=2&page=2>;
+        rel="next" - note the header rewrites to the www host, which
+        301-redirects to omc.com, so a naive client following rel="next"
+        leaves the API. Callers must rewrite to the apex host.
+field_selection:
+  supported: true
+  parameters:
+    - name: _fields
+      description: Comma-separated list of fields to limit the response to.
+    - name: _embed
+      description: Inline embedded resources (author, terms, featured media).
+    - name: context
+      description: 'view | embed | edit - determines which fields are present.'
+  note: >-
+    `context=edit` requires a capability and returns HTTP 401 anonymously.
+ordering_and_filtering:
+  parameters:
+    - orderby
+    - order
+    - search
+    - after
+    - before
+    - modified_after
+    - modified_before
+    - include
+    - exclude
+    - slug
+    - status
+request_id:
+  supported: false
+  detail: No correlation or request-id header is returned.
+versioning:
+  scheme: namespace-in-path
+  detail: >-
+    Version lives in the namespace segment (`/wp-json/wp/v2/`,
+    `/wp-json/wp-abilities/v1/`, `/wp-json/oembed/1.0/`). The namespace list
+    is discoverable at /wp-json/. No version negotiation header.
+error_envelope:
+  shape: '{code, message, data:{status}}'
+  content_type: application/json
+  rfc9457: false
+  catalog: errors/interpublic-problem-types.yml
+rate_limit_signaling:
+  headers: []
+  detail: >-
+    No X-RateLimit-*, RateLimit-* or Retry-After header was observed on any
+    response. The edge is Cloudflare in front of a WP Engine origin
+    (`server: cloudflare`, `x-cache`, `x-cacheable: SHORT` observed), so
+    throttling, if any, is edge-side and unadvertised. See
+    rate-limits/interpublic-rate-limits.yml.
+caching:
+  headers_observed:
+    - x-cacheable
+    - x-cache
+    - x-cache-group
+  detail: 'WP Engine edge cache; x-cacheable: SHORT on collection reads.'
+cross_links:
+  authentication: authentication/interpublic-authentication.yml
+  errors: errors/interpublic-problem-types.yml
+  lifecycle: lifecycle/interpublic-lifecycle.yml
+  rate_limits: rate-limits/interpublic-rate-limits.yml
+  data_model: data-model/interpublic-data-model.yml

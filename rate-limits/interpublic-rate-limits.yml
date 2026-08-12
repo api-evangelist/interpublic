@@ -1,0 +1,36 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  response headers observed on live anonymous calls to
+  https://interpublic.com/wp-json/* (2026-08-12)
+limit_count: 0
+note: >-
+  Interpublic Group publishes no rate limits and returns no rate-limit
+  signal. No X-RateLimit-*, RateLimit-* or Retry-After header appeared on any
+  response, and no 429 was produced by the probes run. WordPress core has no
+  built-in rate limiting. Traffic passes through Cloudflare in front of a WP
+  Engine origin (`server: cloudflare`, `x-cache`, `x-cache-group`,
+  `x-cacheable: SHORT` observed), so any throttling is edge-side, undisclosed
+  and unadvertised - a caller cannot know its budget before being cut off.
+  This is an honest zero, not an unchecked field.
+limits: []
+headers_observed:
+  rate_limit: []
+  caching:
+    - x-cacheable
+    - x-cache
+    - x-cache-group
+  pagination:
+    - X-WP-Total
+    - X-WP-TotalPages
+    - Link
+exhaustion:
+  status_code: null
+  observed: false
+evidence:
+  - url: https://interpublic.com/wp-json/wp/v2/posts?per_page=2
+    status: 200
+    note: 'no rate-limit headers present'
+  - url: https://interpublic.com/wp-json/
+    status: 200
+    note: 'no rate-limit headers present'

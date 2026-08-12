@@ -1,0 +1,97 @@
+generated: '2026-08-12'
+method: probed
+source: live GET probes of every Interpublic Group host in apis.yml
+note: >-
+  Every /.well-known/ path probed on every Interpublic Group host missed. On
+  www.interpublic.com every path returns HTTP 301 and the redirect chain
+  terminates at https://www.omc.com/ with an HTML document - the Omnicom
+  corporate homepage, not a well-known document. That is a catch-all
+  redirect, not a served surface, so nothing here is recorded as a hit and NO
+  WellKnown or SecurityTxt pointer is emitted in apis.yml. On the apex
+  interpublic.com, which still serves the WordPress origin, security.txt and
+  llms.txt return a genuine HTTP 404 and the remaining .well-known paths 301
+  to the www host. investors.interpublic.com answers HTTP 403 to every path
+  including a nonsense control, so that host is bot-blocked rather than
+  measured.
+hosts:
+  - host: https://interpublic.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 301
+        redirect: https://www.interpublic.com/.well-known/openid-configuration
+      - path: /.well-known/oauth-authorization-server
+        status: 301
+        redirect: https://www.interpublic.com/.well-known/oauth-authorization-server
+      - path: /.well-known/oauth-protected-resource
+        status: 301
+        redirect: https://www.interpublic.com/.well-known/oauth-protected-resource
+      - path: /.well-known/api-catalog
+        status: 301
+        redirect: https://www.interpublic.com/.well-known/api-catalog
+      - path: /.well-known/ai-plugin.json
+        status: 301
+        redirect: https://www.interpublic.com/.well-known/ai-plugin.json
+      - path: /.well-known/agent-card.json
+        status: 301
+        redirect: https://www.interpublic.com/.well-known/agent-card.json
+      - path: /.well-known/agent.json
+        status: 301
+        redirect: https://www.interpublic.com/.well-known/agent.json
+      - path: /.well-known/mcp.json
+        status: 301
+        redirect: https://www.interpublic.com/.well-known/mcp.json
+      - path: /llms.txt
+        status: 404
+      - path: /robots.txt
+        status: 200
+        note: >-
+          Served, but a robots.txt is not a well-known discovery document and
+          is not counted as a hit. Content is the WordPress default disallow
+          set plus Sitemap: https://www.interpublic.com/sitemap_index.xml.
+  - host: https://www.interpublic.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 301
+        final_url: https://www.omc.com/
+        final_status: 200
+        final_content_type: text/html
+        hit: false
+      - path: /.well-known/agent-card.json
+        status: 301
+        final_url: https://www.omc.com/
+        final_status: 200
+        final_content_type: text/html
+        hit: false
+      - path: /.well-known/api-catalog
+        status: 301
+        final_url: https://www.omc.com/
+        final_status: 200
+        final_content_type: text/html
+        hit: false
+      - path: /llms.txt
+        status: 301
+        final_url: https://www.omc.com/
+        final_status: 200
+        final_content_type: text/html
+        hit: false
+  - host: https://investors.interpublic.com
+    documents:
+      - path: /
+        status: 403
+      - path: /.well-known/security.txt
+        status: 403
+      - path: /.well-known/agent-card.json
+        status: 403
+      - path: /llms.txt
+        status: 403
+      - path: /nonexistent-control-xyz
+        status: 403
+        note: >-
+          Control path. Identical 403 to every real path, so this host is
+          bot-blocked and no presence or absence can be inferred from it.
+summary:
+  hits: 0
+  documents_served: 0
+  pointer_emitted: false

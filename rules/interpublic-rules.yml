@@ -2,8 +2,11 @@ aid: interpublic
 name: Interpublic Group Rules
 description: >-
   Validation, governance, and operational rules applied to the Interpublic
-  Group APIs.json index. No OpenAPI artifacts are produced because no public
-  REST API is published at the holding-company level.
+  Group APIs.json index. Interpublic Group publishes no product REST API and
+  no OpenAPI at the holding-company level; the OpenAPI documents in openapi/
+  are a mechanical conversion of the WordPress route-discovery document the
+  provider serves at https://interpublic.com/wp-json/ (fetched 2026-08-12,
+  HTTP 200) and are marked method: derived.
 type: company
 profile:
   - apis.json

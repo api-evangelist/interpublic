@@ -1,0 +1,35 @@
+generated: '2026-08-12'
+method: searched
+source: >-
+  registry searches 2026-08-12 - npm registry search API, PyPI JSON API,
+  GitHub organization API
+package_count: 0
+packages: []
+note: >-
+  No first-party Interpublic Group client library exists in any public
+  registry. npm registry search for "interpublic" returned total 0.
+  pypi.org/pypi/interpublic/json returned HTTP 404. The GitHub organizations
+  `interpublic` and `interpublic-group` return HTTP 404 - they do not exist.
+  Two subsidiary-brand organizations do exist but neither is an IPG
+  holding-company SDK surface: github.com/ipgmediabrands has 0 public
+  repositories, and github.com/acxiom has 1 public repository and belongs to
+  Acxiom, which is profiled separately. No `SDKs` pointer is emitted in
+  apis.yml, because there is no official client library to count.
+evidence:
+  - url: https://registry.npmjs.org/-/v1/search?text=interpublic
+    status: 200
+    note: 'total: 0'
+  - url: https://pypi.org/pypi/interpublic/json
+    status: 404
+  - url: https://api.github.com/orgs/interpublic
+    status: 404
+  - url: https://api.github.com/orgs/interpublic-group
+    status: 404
+  - url: https://api.github.com/orgs/ipgmediabrands
+    status: 200
+    note: 'public_repos: 0 - empty placeholder organization'
+  - url: https://api.github.com/orgs/acxiom
+    status: 200
+    note: >-
+      public_repos: 1 - belongs to Acxiom, an IPG company profiled under its
+      own slug; not attributed to Interpublic Group here

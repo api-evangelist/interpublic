@@ -4,11 +4,16 @@ description: >-
   The Interpublic Group of Companies (IPG) is one of the world's largest
   advertising and marketing services holding companies, with networks
   including McCann Worldgroup, IPG Mediabrands, FCB, MullenLowe Group, and
-  Acxiom. In 2024 Omnicom announced its acquisition of IPG and operates
-  combined brand operations under omc.com. IPG does not publish a unified
-  public developer portal or open REST APIs; technology surfaces are
-  delivered through agency-network products such as Acxiom data services
-  and Mediabrands' identity and measurement platforms.
+  Acxiom. In 2024 Omnicom announced its acquisition of IPG; the combined
+  brand operations now run under omc.com, and www.interpublic.com
+  301-redirects there. IPG publishes no unified public developer portal and
+  no product REST API at the holding-company level - technology surfaces are
+  delivered through agency-network products such as Acxiom data services and
+  Mediabrands' identity and measurement platforms, all partner-gated. The one
+  live, machine-readable HTTP contract on IPG's own host is the WordPress
+  REST API still served from the apex interpublic.com origin, which carries
+  the corporate newsroom (346 posts) and advertises 254 routes across 17
+  namespaces through its self-describing route-discovery document.
 type: Index
 accessModel:
   pricing: unknown
@@ -28,15 +33,123 @@ tags:
   - Fortune 500
   - Holding Company
   - Media
+  - Content
+  - WordPress
+  - Newsroom
 url: >-
   https://raw.githubusercontent.com/api-evangelist/interpublic/refs/heads/main/apis.yml
 created: '2026-03-21'
-modified: '2026-04-28'
+modified: '2026-08-12'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: interpublic:wp-v2-api
+    name: Interpublic Group WordPress Wp/v2 API
+    description: >-
+      WordPress core content API for the Interpublic Group corporate site -
+      posts, pages, media, taxonomies, users, settings, blocks and templates.
+      Read collections (posts, pages, media, categories, tags, search, types)
+      answer anonymously with HTTP 200; users and settings answer HTTP 401
+      with the WordPress error envelope. Derived verbatim from the live
+      route-discovery document at https://interpublic.com/wp-json/.
+    humanURL: https://developer.wordpress.org/rest-api/
+    baseURL: https://interpublic.com
+    tags:
+      - Content
+      - JSON
+      - REST
+      - WordPress
+      - Newsroom
+    properties:
+      - type: OpenAPI
+        url: openapi/interpublic-wp-v2-api-openapi.yml
+      - type: Documentation
+        url: https://developer.wordpress.org/rest-api/
+      - type: APIReference
+        url: https://developer.wordpress.org/rest-api/reference/
+      - type: DataModel
+        url: data-model/interpublic-data-model.yml
+      - type: Overlay
+        url: overlays/interpublic-wp-rest-overlay.yaml
+  - aid: interpublic:wp-abilities-v1-api
+    name: Interpublic Group WordPress Abilities API
+    description: >-
+      WordPress Abilities API - the registry of named abilities an agent may
+      discover and run on this install. Present in the route-discovery
+      document with six routes; every route observed HTTP 401
+      (`rest_forbidden`) anonymously, and a control path on the same host
+      answers 404, so the surface exists and is capability-gated.
+    humanURL: https://developer.wordpress.org/rest-api/
+    baseURL: https://interpublic.com
+    tags:
+      - Abilities
+      - Agents
+      - WordPress
+    properties:
+      - type: OpenAPI
+        url: openapi/interpublic-wp-abilities-v1-api-openapi.yml
+      - type: Documentation
+        url: https://developer.wordpress.org/rest-api/
+  - aid: interpublic:oembed-1-0-api
+    name: Interpublic Group oEmbed API
+    description: >-
+      oEmbed discovery and proxy endpoints exposed by the Interpublic Group
+      WordPress install, returning embeddable representations of newsroom
+      URLs. Observed HTTP 200 anonymously.
+    humanURL: https://oembed.com/
+    baseURL: https://interpublic.com
+    tags:
+      - oEmbed
+      - Embed
+      - WordPress
+    properties:
+      - type: OpenAPI
+        url: openapi/interpublic-oembed-1-0-api-openapi.yml
+  - aid: interpublic:root-api
+    name: Interpublic Group WordPress REST Index API
+    description: >-
+      The REST API index / namespace-discovery route. GET
+      https://interpublic.com/wp-json/ returns the self-describing document
+      that enumerates all 254 routes across 17 namespaces, along with site
+      identity (name "IPG", url https://www.interpublic.com). This document
+      is the source every other spec in this repository was derived from.
+    humanURL: https://interpublic.com/wp-json/
+    baseURL: https://interpublic.com
+    tags:
+      - Discovery
+      - Index
+      - WordPress
+    properties:
+      - type: OpenAPI
+        url: openapi/interpublic-root-api-openapi.yml
+      - type: DiscoveryDocument
+        url: openapi/interpublic-wp-rest-discovery-original.json
 common:
   - type: DomainSecurity
     url: security/interpublic-domain-security.yml
+  - type: Authentication
+    url: authentication/interpublic-authentication.yml
+  - type: Conventions
+    url: conventions/interpublic-conventions.yml
+  - type: Conformance
+    url: conformance/interpublic-conformance.yml
+  - type: ErrorCatalog
+    url: errors/interpublic-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/interpublic-lifecycle.yml
+  - type: DataModel
+    url: data-model/interpublic-data-model.yml
+  - type: Packages
+    url: packages/interpublic-packages.yml
+  - type: RateLimits
+    url: rate-limits/interpublic-rate-limits.yml
+  - type: Plans
+    url: plans/interpublic-plans-pricing.yml
+  - type: LLMsTxt
+    url: llms/interpublic-llms.txt
+  - type: Overlay
+    url: overlays/interpublic-wp-rest-overlay.yaml
+  - type: AgentSkill
+    url: skills/_index.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/ipg
   - type: Website
@@ -50,3 +163,8 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-12'
+  status: enriched
+  artifacts_added: 20
+  pass: local-v1

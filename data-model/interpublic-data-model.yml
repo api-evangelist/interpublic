@@ -1,0 +1,151 @@
+generated: '2026-08-12'
+method: derived
+source: >-
+  openapi/interpublic-wp-v2-api-openapi.yml and the live
+  route-discovery document at https://interpublic.com/wp-json/, plus one
+  observed GET /wp-json/wp/v2/posts?per_page=1 response (2026-08-12) read for
+  its field and _links shape
+note: >-
+  WordPress core does not publish JSON Schema for its resources in the
+  route-discovery document, so relationships below are read from the observed
+  post payload's id-reference fields and its HAL-style `_links` block, and
+  from the route tree. Three custom post types (`ci_lead_form`,
+  `supplier_lead_form`, `icons`) are specific to this Interpublic Group
+  install and are not WordPress core.
+entities:
+  - name: post
+    path: /wp-json/wp/v2/posts
+    access: anonymous-read
+    count_observed: 346
+    id_field: id
+    key_fields:
+      - id
+      - date
+      - modified
+      - slug
+      - status
+      - link
+      - title.rendered
+      - content.rendered
+      - excerpt.rendered
+      - author
+      - featured_media
+      - categories
+      - tags
+      - acf
+      - yoast_head_json
+  - name: page
+    path: /wp-json/wp/v2/pages
+    access: anonymous-read
+    id_field: id
+  - name: media
+    path: /wp-json/wp/v2/media
+    access: anonymous-read
+    id_field: id
+  - name: category
+    path: /wp-json/wp/v2/categories
+    access: anonymous-read
+    id_field: id
+  - name: tag
+    path: /wp-json/wp/v2/tags
+    access: anonymous-read
+    id_field: id
+  - name: user
+    path: /wp-json/wp/v2/users
+    access: gated
+    gate_evidence: 'HTTP 401 rest_user_cannot_view, 2026-08-12'
+    id_field: id
+  - name: type
+    path: /wp-json/wp/v2/types
+    access: anonymous-read
+  - name: taxonomy
+    path: /wp-json/wp/v2/taxonomies
+    access: anonymous-read
+  - name: comment
+    path: /wp-json/wp/v2/comments
+    id_field: id
+  - name: revision
+    path: /wp-json/wp/v2/posts/{parent}/revisions
+    access: gated
+  - name: ci_lead_form
+    path: /wp-json/wp/v2/ci_lead_form
+    custom: true
+    note: >-
+      Custom post type registered on this install - a lead-capture form
+      content type, not WordPress core.
+  - name: supplier_lead_form
+    path: /wp-json/wp/v2/supplier_lead_form
+    custom: true
+    note: >-
+      Custom post type registered on this install - a supplier lead-capture
+      content type, not WordPress core.
+  - name: icons
+    path: /wp-json/wp/v2/icons
+    custom: true
+    note: 'Custom post type registered on this install.'
+  - name: ability
+    path: /wp-json/wp-abilities/v1/abilities
+    access: gated
+    gate_evidence: 'HTTP 401 rest_forbidden, 2026-08-12'
+    note: >-
+      WordPress Abilities API registry entry - the agent-facing surface on
+      this install, closed to anonymous callers.
+relationships:
+  - from: post
+    to: user
+    type: belongs_to
+    via: author
+    evidence: 'post.author integer id + _links.author'
+  - from: post
+    to: media
+    type: belongs_to
+    via: featured_media
+    evidence: 'post.featured_media integer id + _links["wp:featuredmedia"]'
+  - from: post
+    to: category
+    type: has_many
+    via: categories
+    evidence: 'post.categories integer id array + _links["wp:term"]'
+  - from: post
+    to: tag
+    type: has_many
+    via: tags
+    evidence: 'post.tags integer id array + _links["wp:term"]'
+  - from: post
+    to: comment
+    type: has_many
+    via: _links.replies
+  - from: post
+    to: revision
+    type: has_many
+    via: _links["version-history"]
+  - from: post
+    to: media
+    type: has_many
+    via: _links["wp:attachment"]
+  - from: page
+    to: page
+    type: belongs_to
+    via: parent
+  - from: category
+    to: category
+    type: belongs_to
+    via: parent
+  - from: ability
+    to: ability_category
+    type: belongs_to
+    via: category
+    evidence: '/wp-abilities/v1/categories route present in discovery document'
+link_relations:
+  style: HAL-like `_links` object with WordPress curies
+  observed:
+    - self
+    - collection
+    - about
+    - author
+    - replies
+    - version-history
+    - wp:featuredmedia
+    - wp:attachment
+    - wp:term
+    - curies

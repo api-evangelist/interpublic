@@ -1,0 +1,74 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  live probes of Interpublic Group hosts 2026-08-12 plus
+  openapi/interpublic-wp-rest-discovery-original.json
+versioning:
+  scheme: namespace-in-path
+  current: wp/v2
+  namespaces:
+    - wp/v2
+    - wp-abilities/v1
+    - oembed/1.0
+    - root
+  docs: https://developer.wordpress.org/rest-api/
+  note: >-
+    Versioning is WordPress core's, not a policy Interpublic Group authored
+    or publishes. There is no provider versioning statement.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  evidence: >-
+    No Sunset or Deprecation response header observed on any endpoint; no
+    deprecation policy page exists on any Interpublic Group host. No
+    `Deprecation` pointer is emitted in apis.yml.
+sla:
+  url: null
+  uptime_target: null
+status_page:
+  url: null
+  evidence: >-
+    status.interpublic.com does not resolve (DNS failure, 2026-08-12). No
+    status page is linked from any reachable Interpublic Group page. No
+    `StatusPage` pointer is emitted in apis.yml.
+deprecated_operations: []
+surface_lifecycle:
+  state: succeeded-by-acquisition
+  detail: >-
+    Omnicom completed its acquisition of Interpublic Group; www.interpublic.com
+    now 301-redirects to https://www.omc.com/ for every HTML path, and
+    newsroom permalinks 301 to investors.interpublic.com. The apex host
+    interpublic.com still serves the original WordPress origin, and the REST
+    API on it remains live and anonymous-readable. Content on it has stopped:
+    the most recent post returned by GET /wp-json/wp/v2/posts is dated
+    2025-11-24, and the sitemap index reports lastmod 2025-11-26. Treat this
+    API as a frozen archive of 346 corporate news posts rather than a
+    maintained surface.
+  evidence:
+    - url: https://www.interpublic.com/
+      status: 301
+      note: terminates at https://www.omc.com/
+    - url: https://interpublic.com/wp-json/wp/v2/posts?per_page=2
+      status: 200
+      note: 'X-WP-Total: 346; newest post date 2025-11-24T09:58:23'
+    - url: https://interpublic.com/sitemap_index.xml
+      status: 200
+      note: 'newest lastmod 2025-11-26T23:29:52+00:00'
+gateway:
+  host: api.interpublic.com
+  vendor: Apigee
+  state: live-but-unrouted
+  detail: >-
+    api.interpublic.com resolves and answers every path - including a nonsense
+    control - with an Apigee fault
+    (`messaging.adaptors.http.flow.ApplicationNotFound`, "Unable to identify
+    proxy for host"). An API gateway is genuinely deployed on Interpublic
+    Group's own domain, but no API proxy is bound to that virtual host
+    publicly, so no basepath, spec or documentation can be discovered
+    anonymously. Sixteen candidate basepaths were swept; all returned the same
+    fault.
+  evidence:
+    - url: https://api.interpublic.com/
+      status: 404
+    - url: https://api.interpublic.com/nonexistent-control-xyz
+      status: 404

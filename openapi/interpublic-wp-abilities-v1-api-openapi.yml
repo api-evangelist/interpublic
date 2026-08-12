@@ -1,0 +1,437 @@
+openapi: 3.2.0
+info:
+  title: Interpublic Group WordPress REST wp-abilities/v1 API
+  version: wp-abilities/v1
+  summary: The live WordPress REST API served by the Interpublic Group corporate website.
+  description: 'Derived verbatim from the route-discovery document the Interpublic Group web server publishes
+    at https://interpublic.com/wp-json/ (fetched 2026-08-12, HTTP 200). Every path, method, parameter
+    name, type, default and enum in this document was read from that live response; nothing was invented.
+
+
+    This is the content-management API of the corporate marketing site, not a product API. Interpublic
+    Group is an advertising and marketing-services holding company and publishes no developer product
+    API at the holding-company level. The surface is included because it is a real, live, self-describing
+    HTTP contract on the provider''s own host: the apex https://interpublic.com still serves the WordPress
+    origin (346 posts, X-WP-Total observed) while www.interpublic.com 301-redirects to omc.com following
+    the Omnicom acquisition.
+
+
+    Only the WordPress core namespaces are represented (`wp/v2`, `wp-abilities/v1`, `oembed/1.0`, root).
+    Third-party plugin namespaces advertised by the same discovery document (yoast/v1, redirection/v1,
+    webdev-insight/v1, wordfence/v1, accessibility-suite/v1, aam/v2, wp-offload-media/v1, wpe_sign_on_plugin/v1,
+    wpe/cache-plugin/v1, wr/v1, fluent-smtp, ada-plugin/v1, wp-site-health/v1, wp-block-editor/v1) are
+    intentionally excluded as vendor plugin internals.'
+  x-derived-from: https://interpublic.com/wp-json/
+  x-derived-on: '2026-08-12'
+  x-apievangelist-method: derived
+servers:
+- url: https://interpublic.com
+  description: Production origin (apex host; www 301s to omc.com)
+tags:
+- name: wp-abilities/v1
+  description: WordPress Abilities API - registry of named abilities an agent may discover and run. Capability-gated
+    (observed HTTP 401 anonymously).
+paths:
+  /wp-json/wp-abilities/v1:
+    get:
+      operationId: getWpAbilitiesV1
+      summary: GET /wp-abilities/v1
+      description: WordPress REST API route `/wp-abilities/v1` in namespace `wp-abilities/v1`, as advertised
+        by the live route-discovery document at https://interpublic.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      parameters:
+      - name: namespace
+        in: query
+        schema:
+          default: wp-abilities/v1
+      - name: context
+        in: query
+        schema:
+          default: view
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+  /wp-json/wp-abilities/v1/abilities:
+    get:
+      operationId: getWpAbilitiesV1Abilities
+      summary: GET /wp-abilities/v1/abilities
+      description: WordPress REST API route `/wp-abilities/v1/abilities` in namespace `wp-abilities/v1`,
+        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      parameters:
+      - name: context
+        in: query
+        schema:
+          type: string
+          enum:
+          - view
+          - embed
+          - edit
+          default: view
+        description: Scope under which the request is made; determines fields present in response.
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+        description: Current page of the collection.
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+          default: 50
+        description: Maximum number of items to be returned in result set.
+      - name: category
+        in: query
+        schema:
+          type: string
+        description: Limit results to abilities in specific ability category.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+  /wp-json/wp-abilities/v1/abilities/{name}:
+    parameters:
+    - name: name
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Path segment `name` from the WordPress route pattern `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+)`.
+    get:
+      operationId: getWpAbilitiesV1AbilitiesByName
+      summary: GET /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+)
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+)` in
+        namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+  /wp-json/wp-abilities/v1/abilities/{name}/run:
+    parameters:
+    - name: name
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Path segment `name` from the WordPress route pattern `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run`.
+    get:
+      operationId: getWpAbilitiesV1AbilitiesByNameRun
+      summary: GET /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run`
+        in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      parameters:
+      - name: input
+        in: query
+        schema:
+          type: integer
+        description: Input parameters for the ability execution.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+    post:
+      operationId: createWpAbilitiesV1AbilitiesByNameRun
+      summary: POST /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run`
+        in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input:
+                  type: integer
+                  description: Input parameters for the ability execution.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+    put:
+      operationId: updateWpAbilitiesV1AbilitiesByNameRun
+      summary: PUT /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run`
+        in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input:
+                  type: integer
+                  description: Input parameters for the ability execution.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+    patch:
+      operationId: updateWpAbilitiesV1AbilitiesByNameRun2
+      summary: PATCH /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run`
+        in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input:
+                  type: integer
+                  description: Input parameters for the ability execution.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+    delete:
+      operationId: deleteWpAbilitiesV1AbilitiesByNameRun
+      summary: DELETE /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run`
+        in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      parameters:
+      - name: input
+        in: query
+        schema:
+          type: integer
+        description: Input parameters for the ability execution.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+  /wp-json/wp-abilities/v1/categories:
+    get:
+      operationId: getWpAbilitiesV1Categories
+      summary: GET /wp-abilities/v1/categories
+      description: WordPress REST API route `/wp-abilities/v1/categories` in namespace `wp-abilities/v1`,
+        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      parameters:
+      - name: context
+        in: query
+        schema:
+          type: string
+          enum:
+          - view
+          - embed
+          - edit
+          default: view
+        description: Scope under which the request is made; determines fields present in response.
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+        description: Current page of the collection.
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+          default: 50
+        description: Maximum number of items to be returned in result set.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+  /wp-json/wp-abilities/v1/categories/{slug}:
+    parameters:
+    - name: slug
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Path segment `slug` from the WordPress route pattern `/wp-abilities/v1/categories/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)`.
+    get:
+      operationId: getWpAbilitiesV1CategoriesBySlug
+      summary: GET /wp-abilities/v1/categories/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)
+      description: WordPress REST API route `/wp-abilities/v1/categories/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)`
+        in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      tags:
+      - wp-abilities/v1
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Authentication required or capability missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+        '404':
+          description: No route or resource found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WPError'
+components:
+  schemas:
+    WPError:
+      type: object
+      description: The WordPress REST API error envelope, observed verbatim on live 401/404 responses
+        from this host. Not RFC 9457 problem+json.
+      properties:
+        code:
+          type: string
+          examples:
+          - rest_forbidden
+          - rest_no_route
+          - rest_user_cannot_view
+        message:
+          type: string
+          examples:
+          - Sorry, you are not allowed to do that.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              examples:
+              - 401

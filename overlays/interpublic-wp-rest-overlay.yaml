@@ -1,0 +1,48 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Interpublic Group WordPress REST API
+  version: 1.0.0
+extends: openapi/interpublic-wp-v2-api-openapi.yml
+x-generated: '2026-08-12'
+x-method: generated
+x-source: >-
+  API Evangelist enrichment pass 2026-08-12. Captures our annotations over the
+  spec derived from https://interpublic.com/wp-json/ without mutating it.
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-profile: https://apis.io/provider/interpublic/
+      x-apievangelist-surface-state: >-
+        Frozen archive. Omnicom's acquisition moved the corporate site to
+        omc.com; www.interpublic.com 301s there, while the apex host still
+        serves this WordPress origin. Newest post 2025-11-24.
+      x-apievangelist-auth-note: >-
+        Reads are anonymous. Writes and privileged reads need a WordPress
+        cookie plus X-WP-Nonce, which no third party can obtain. See
+        authentication/interpublic-authentication.yml.
+      x-apievangelist-error-envelope: >-
+        {code, message, data:{status}} as application/json. Not RFC 9457.
+  - target: $.servers
+    update:
+      - url: https://interpublic.com
+        description: >-
+          Production origin. Use the APEX host. The www host 301-redirects to
+          https://www.omc.com/ and Link rel="next" pagination headers are
+          rewritten to www, so a client that follows them naively leaves the
+          API.
+  - target: $.paths['/wp-json/wp/v2/posts'].get
+    update:
+      x-apievangelist-note: >-
+        The newsroom collection. X-WP-Total observed at 346 on 2026-08-12;
+        X-WP-TotalPages honors per_page. This is the highest-value operation
+        on the surface.
+  - target: $.paths['/wp-json/wp/v2/users'].get
+    update:
+      x-apievangelist-observed-status: 401
+      x-apievangelist-note: >-
+        Observed HTTP 401 rest_user_cannot_view anonymously. Author identity
+        is only reachable indirectly through post.author.
+  - target: $.paths['/wp-json/wp/v2/settings'].get
+    update:
+      x-apievangelist-observed-status: 401
+      x-apievangelist-note: 'Observed HTTP 401 rest_forbidden anonymously.'
