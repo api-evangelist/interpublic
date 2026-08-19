@@ -40,7 +40,7 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/interpublic/refs/heads/main/apis.yml
 created: '2026-03-21'
 modified: '2026-08-12'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
   - aid: interpublic:wp-v2-api
     name: Interpublic Group WordPress Wp/v2 API
