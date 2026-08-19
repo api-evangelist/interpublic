@@ -1,0 +1,266 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Interpublic Group WordPress REST wp-abilities/v1 API",
+    "version": "wp-abilities/v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "wp-abilities/v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /wp-abilities/v1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://interpublic.com/wp-json/wp-abilities/v1",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "WordPress REST API route `/wp-abilities/v1` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "GET /wp-abilities/v1/abilities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://interpublic.com/wp-json/wp-abilities/v1/abilities",
+            "params": [
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Scope under which the request is made; determines fields present in response."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Current page of the collection."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to be returned in result set."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Limit results to abilities in specific ability category."
+              }
+            ]
+          },
+          "docs": "WordPress REST API route `/wp-abilities/v1/abilities` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "GET /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://interpublic.com/wp-json/wp-abilities/v1/abilities/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `name` from the WordPress route pattern `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+)`."
+              }
+            ]
+          },
+          "docs": "WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+)` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "GET /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://interpublic.com/wp-json/wp-abilities/v1/abilities/:name/run",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `name` from the WordPress route pattern `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run`."
+              },
+              {
+                "name": "input",
+                "value": "",
+                "type": "query",
+                "description": "Input parameters for the ability execution."
+              }
+            ]
+          },
+          "docs": "WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "POST /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://interpublic.com/wp-json/wp-abilities/v1/abilities/:name/run",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `name` from the WordPress route pattern `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "PUT /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://interpublic.com/wp-json/wp-abilities/v1/abilities/:name/run",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `name` from the WordPress route pattern `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "PATCH /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://interpublic.com/wp-json/wp-abilities/v1/abilities/:name/run",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `name` from the WordPress route pattern `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "DELETE /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://interpublic.com/wp-json/wp-abilities/v1/abilities/:name/run",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `name` from the WordPress route pattern `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run`."
+              },
+              {
+                "name": "input",
+                "value": "",
+                "type": "query",
+                "description": "Input parameters for the ability execution."
+              }
+            ]
+          },
+          "docs": "WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "GET /wp-abilities/v1/categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://interpublic.com/wp-json/wp-abilities/v1/categories",
+            "params": [
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Scope under which the request is made; determines fields present in response."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Current page of the collection."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to be returned in result set."
+              }
+            ]
+          },
+          "docs": "WordPress REST API route `/wp-abilities/v1/categories` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "GET /wp-abilities/v1/categories/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://interpublic.com/wp-json/wp-abilities/v1/categories/:slug",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path",
+                "description": "Path segment `slug` from the WordPress route pattern `/wp-abilities/v1/categories/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)`."
+              }
+            ]
+          },
+          "docs": "WordPress REST API route `/wp-abilities/v1/categories/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

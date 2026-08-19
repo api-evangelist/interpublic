@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Interpublic Group WordPress REST Root API",
+    "version": "root"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "root",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://interpublic.com/wp-json/",
+            "params": [
+              {
+                "name": "context",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "WordPress REST API route `/` in namespace `root`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/."
+        },
+        {
+          "info": {
+            "name": "POST /batch/v1",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://interpublic.com/wp-json/batch/v1",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "WordPress REST API route `/batch/v1` in namespace `root`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
