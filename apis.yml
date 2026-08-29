@@ -15,6 +15,18 @@ description: >-
   the corporate newsroom (346 posts) and advertises 254 routes across 17
   namespaces through its self-describing route-discovery document.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
