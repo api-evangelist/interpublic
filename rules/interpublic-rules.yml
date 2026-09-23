@@ -1,5 +1,5 @@
-aid: interpublic
-name: Interpublic Group Rules
+x-aid: interpublic
+x-name: Interpublic Group Rules
 description: >-
   Validation, governance, and operational rules applied to the Interpublic
   Group APIs.json index. Interpublic Group publishes no product REST API and
@@ -7,10 +7,10 @@ description: >-
   are a mechanical conversion of the WordPress route-discovery document the
   provider serves at https://interpublic.com/wp-json/ (fetched 2026-08-12,
   HTTP 200) and are marked method: derived.
-type: company
-profile:
+x-type: company
+x-profile:
   - apis.json
-governance:
+x-governance:
   source: api-evangelist
   steward: Kin Lane
   visibility: public

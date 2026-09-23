@@ -1,26 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Interpublic Group WordPress REST wp/v2 API
+  title: Interpublic Group WordPress REST Wp/v2 API
   version: wp/v2
   summary: The live WordPress REST API served by the Interpublic Group corporate website.
-  description: 'Derived verbatim from the route-discovery document the Interpublic Group web server publishes
-    at https://interpublic.com/wp-json/ (fetched 2026-08-12, HTTP 200). Every path, method, parameter
-    name, type, default and enum in this document was read from that live response; nothing was invented.
-
-
-    This is the content-management API of the corporate marketing site, not a product API. Interpublic
-    Group is an advertising and marketing-services holding company and publishes no developer product
-    API at the holding-company level. The surface is included because it is a real, live, self-describing
-    HTTP contract on the provider''s own host: the apex https://interpublic.com still serves the WordPress
-    origin (346 posts, X-WP-Total observed) while www.interpublic.com 301-redirects to omc.com following
-    the Omnicom acquisition.
-
-
-    Only the WordPress core namespaces are represented (`wp/v2`, `wp-abilities/v1`, `oembed/1.0`, root).
-    Third-party plugin namespaces advertised by the same discovery document (yoast/v1, redirection/v1,
-    webdev-insight/v1, wordfence/v1, accessibility-suite/v1, aam/v2, wp-offload-media/v1, wpe_sign_on_plugin/v1,
-    wpe/cache-plugin/v1, wr/v1, fluent-smtp, ada-plugin/v1, wp-site-health/v1, wp-block-editor/v1) are
-    intentionally excluded as vendor plugin internals.'
+  description: Derived verbatim from the route-discovery document the Interpublic Group web server publishes at https://interpublic.com/wp-json/ (fetched 2026-08-12, HTTP 200).
   x-derived-from: https://interpublic.com/wp-json/
   x-derived-on: '2026-08-12'
   x-apievangelist-method: derived
@@ -35,8 +18,7 @@ paths:
     get:
       operationId: getWpV2
       summary: GET /wp/v2
-      description: WordPress REST API route `/wp/v2` in namespace `wp/v2`, as advertised by the live route-discovery
-        document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -70,8 +52,7 @@ paths:
     get:
       operationId: getWpV2AamPolicy
       summary: GET /wp/v2/aam_policy
-      description: WordPress REST API route `/wp/v2/aam_policy` in namespace `wp/v2`, as advertised by
-        the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/aam_policy` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -236,8 +217,7 @@ paths:
     post:
       operationId: createWpV2AamPolicy
       summary: POST /wp/v2/aam_policy
-      description: WordPress REST API route `/wp/v2/aam_policy` in namespace `wp/v2`, as advertised by
-        the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/aam_policy` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -312,9 +292,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/aam_policy/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2AamPolicyById
-      summary: GET /wp/v2/aam_policy/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/aam_policy/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/aam_policy/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/aam_policy/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -358,9 +337,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2AamPolicyById
-      summary: POST /wp/v2/aam_policy/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/aam_policy/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/aam_policy/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/aam_policy/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -427,9 +405,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2AamPolicyById
-      summary: PUT /wp/v2/aam_policy/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/aam_policy/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/aam_policy/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/aam_policy/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -496,9 +473,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2AamPolicyById2
-      summary: PATCH /wp/v2/aam_policy/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/aam_policy/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/aam_policy/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/aam_policy/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -565,9 +541,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2AamPolicyById
-      summary: DELETE /wp/v2/aam_policy/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/aam_policy/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/aam_policy/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/aam_policy/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -605,9 +580,8 @@ paths:
       description: Path segment `parent` from the WordPress route pattern `/wp/v2/aam_policy/(?P<parent>[\d]+)/revisions`.
     get:
       operationId: getWpV2AamPolicyByParentRevisions
-      summary: GET /wp/v2/aam_policy/(?P<parent>[\d]+)/revisions
-      description: WordPress REST API route `/wp/v2/aam_policy/(?P<parent>[\d]+)/revisions` in namespace
-        `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/aam_policy/(?P[\d]+)/revisions
+      description: WordPress REST API route `/wp/v2/aam_policy/(?P[\d]+)/revisions` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -715,9 +689,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/aam_policy/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2AamPolicyByParentRevisionsById
-      summary: GET /wp/v2/aam_policy/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/aam_policy/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/aam_policy/(?P[\d]+)/revisions/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/aam_policy/(?P[\d]+)/revisions/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -751,9 +724,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2AamPolicyByParentRevisionsById
-      summary: DELETE /wp/v2/aam_policy/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/aam_policy/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/aam_policy/(?P[\d]+)/revisions/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/aam_policy/(?P[\d]+)/revisions/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -785,8 +757,7 @@ paths:
     get:
       operationId: getWpV2BlockDirectorySearch
       summary: GET /wp/v2/block-directory/search
-      description: WordPress REST API route `/wp/v2/block-directory/search` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/block-directory/search` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -838,8 +809,7 @@ paths:
     get:
       operationId: getWpV2BlockPatternsCategories
       summary: GET /wp/v2/block-patterns/categories
-      description: WordPress REST API route `/wp/v2/block-patterns/categories` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/block-patterns/categories` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       responses:
@@ -864,8 +834,7 @@ paths:
     get:
       operationId: getWpV2BlockPatternsPatterns
       summary: GET /wp/v2/block-patterns/patterns
-      description: WordPress REST API route `/wp/v2/block-patterns/patterns` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/block-patterns/patterns` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       responses:
@@ -896,9 +865,8 @@ paths:
       description: Path segment `name` from the WordPress route pattern `/wp/v2/block-renderer/(?P<name>[a-z0-9-]+/[a-z0-9-]+)`.
     get:
       operationId: getWpV2BlockRendererByName
-      summary: GET /wp/v2/block-renderer/(?P<name>[a-z0-9-]+/[a-z0-9-]+)
-      description: WordPress REST API route `/wp/v2/block-renderer/(?P<name>[a-z0-9-]+/[a-z0-9-]+)` in
-        namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/block-renderer/(?P[a-z0-9-]+/[a-z0-9-]+)
+      description: WordPress REST API route `/wp/v2/block-renderer/(?P[a-z0-9-]+/[a-z0-9-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -941,9 +909,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2BlockRendererByName
-      summary: POST /wp/v2/block-renderer/(?P<name>[a-z0-9-]+/[a-z0-9-]+)
-      description: WordPress REST API route `/wp/v2/block-renderer/(?P<name>[a-z0-9-]+/[a-z0-9-]+)` in
-        namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/block-renderer/(?P[a-z0-9-]+/[a-z0-9-]+)
+      description: WordPress REST API route `/wp/v2/block-renderer/(?P[a-z0-9-]+/[a-z0-9-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -988,8 +955,7 @@ paths:
     get:
       operationId: getWpV2BlockTypes
       summary: GET /wp/v2/block-types
-      description: WordPress REST API route `/wp/v2/block-types` in namespace `wp/v2`, as advertised by
-        the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/block-types` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -1036,9 +1002,8 @@ paths:
       description: Path segment `namespace` from the WordPress route pattern `/wp/v2/block-types/(?P<namespace>[a-zA-Z0-9_-]+)`.
     get:
       operationId: getWpV2BlockTypesByNamespace
-      summary: GET /wp/v2/block-types/(?P<namespace>[a-zA-Z0-9_-]+)
-      description: WordPress REST API route `/wp/v2/block-types/(?P<namespace>[a-zA-Z0-9_-]+)` in namespace
-        `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/block-types/(?P[a-zA-Z0-9_-]+)
+      description: WordPress REST API route `/wp/v2/block-types/(?P[a-zA-Z0-9_-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -1086,9 +1051,8 @@ paths:
       description: Path segment `name` from the WordPress route pattern `/wp/v2/block-types/(?P<namespace>[a-zA-Z0-9_-]+)/(?P<name>[a-zA-Z0-9_-]+)`.
     get:
       operationId: getWpV2BlockTypesByNamespaceByName
-      summary: GET /wp/v2/block-types/(?P<namespace>[a-zA-Z0-9_-]+)/(?P<name>[a-zA-Z0-9_-]+)
-      description: WordPress REST API route `/wp/v2/block-types/(?P<namespace>[a-zA-Z0-9_-]+)/(?P<name>[a-zA-Z0-9_-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/block-types/(?P[a-zA-Z0-9_-]+)/(?P[a-zA-Z0-9_-]+)
+      description: WordPress REST API route `/wp/v2/block-types/(?P[a-zA-Z0-9_-]+)/(?P[a-zA-Z0-9_-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -1124,8 +1088,7 @@ paths:
     get:
       operationId: getWpV2Blocks
       summary: GET /wp/v2/blocks
-      description: WordPress REST API route `/wp/v2/blocks` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/blocks` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -1265,14 +1228,12 @@ paths:
         in: query
         schema:
           type: object
-        description: Limit result set to items with specific terms assigned in the wp_pattern_category
-          taxonomy.
+        description: Limit result set to items with specific terms assigned in the wp_pattern_category taxonomy.
       - name: wp_pattern_category_exclude
         in: query
         schema:
           type: object
-        description: Limit result set to items except those with specific terms assigned in the wp_pattern_category
-          taxonomy.
+        description: Limit result set to items except those with specific terms assigned in the wp_pattern_category taxonomy.
       responses:
         '200':
           description: Success
@@ -1294,8 +1255,7 @@ paths:
     post:
       operationId: createWpV2Blocks
       summary: POST /wp/v2/blocks
-      description: WordPress REST API route `/wp/v2/blocks` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/blocks` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -1375,9 +1335,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/blocks/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2BlocksById
-      summary: GET /wp/v2/blocks/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/blocks/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/blocks/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/blocks/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -1421,9 +1380,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2BlocksById
-      summary: POST /wp/v2/blocks/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/blocks/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/blocks/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/blocks/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -1495,9 +1453,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2BlocksById
-      summary: PUT /wp/v2/blocks/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/blocks/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/blocks/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/blocks/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -1569,9 +1526,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2BlocksById2
-      summary: PATCH /wp/v2/blocks/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/blocks/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/blocks/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/blocks/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -1643,9 +1599,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2BlocksById
-      summary: DELETE /wp/v2/blocks/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/blocks/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/blocks/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/blocks/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -1683,9 +1638,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/blocks/(?P<id>[\d]+)/autosaves`.
     get:
       operationId: getWpV2BlocksByIdAutosaves
-      summary: GET /wp/v2/blocks/(?P<id>[\d]+)/autosaves
-      description: WordPress REST API route `/wp/v2/blocks/(?P<id>[\d]+)/autosaves` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/blocks/(?P[\d]+)/autosaves
+      description: WordPress REST API route `/wp/v2/blocks/(?P[\d]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -1724,9 +1678,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2BlocksByIdAutosaves
-      summary: POST /wp/v2/blocks/(?P<id>[\d]+)/autosaves
-      description: WordPress REST API route `/wp/v2/blocks/(?P<id>[\d]+)/autosaves` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/blocks/(?P[\d]+)/autosaves
+      description: WordPress REST API route `/wp/v2/blocks/(?P[\d]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -1815,9 +1768,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/blocks/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2BlocksByParentAutosavesById
-      summary: GET /wp/v2/blocks/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/blocks/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/blocks/(?P[\d]+)/autosaves/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/blocks/(?P[\d]+)/autosaves/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -1859,9 +1811,8 @@ paths:
       description: Path segment `parent` from the WordPress route pattern `/wp/v2/blocks/(?P<parent>[\d]+)/revisions`.
     get:
       operationId: getWpV2BlocksByParentRevisions
-      summary: GET /wp/v2/blocks/(?P<parent>[\d]+)/revisions
-      description: WordPress REST API route `/wp/v2/blocks/(?P<parent>[\d]+)/revisions` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/blocks/(?P[\d]+)/revisions
+      description: WordPress REST API route `/wp/v2/blocks/(?P[\d]+)/revisions` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -1969,9 +1920,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/blocks/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2BlocksByParentRevisionsById
-      summary: GET /wp/v2/blocks/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/blocks/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/blocks/(?P[\d]+)/revisions/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/blocks/(?P[\d]+)/revisions/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -2005,9 +1955,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2BlocksByParentRevisionsById
-      summary: DELETE /wp/v2/blocks/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/blocks/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/blocks/(?P[\d]+)/revisions/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/blocks/(?P[\d]+)/revisions/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -2039,8 +1988,7 @@ paths:
     get:
       operationId: getWpV2Categories
       summary: GET /wp/v2/categories
-      description: WordPress REST API route `/wp/v2/categories` in namespace `wp/v2`, as advertised by
-        the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/categories` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -2155,8 +2103,7 @@ paths:
     post:
       operationId: createWpV2Categories
       summary: POST /wp/v2/categories
-      description: WordPress REST API route `/wp/v2/categories` in namespace `wp/v2`, as advertised by
-        the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/categories` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -2211,9 +2158,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/categories/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2CategoriesById
-      summary: GET /wp/v2/categories/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/categories/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/categories/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/categories/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -2247,9 +2193,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2CategoriesById
-      summary: POST /wp/v2/categories/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/categories/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/categories/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/categories/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -2294,9 +2239,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2CategoriesById
-      summary: PUT /wp/v2/categories/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/categories/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/categories/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/categories/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -2341,9 +2285,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2CategoriesById2
-      summary: PATCH /wp/v2/categories/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/categories/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/categories/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/categories/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -2388,9 +2331,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2CategoriesById
-      summary: DELETE /wp/v2/categories/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/categories/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/categories/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/categories/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -2422,8 +2364,7 @@ paths:
     get:
       operationId: getWpV2CiLeadForm
       summary: GET /wp/v2/ci_lead_form
-      description: WordPress REST API route `/wp/v2/ci_lead_form` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/ci_lead_form` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -2572,8 +2513,7 @@ paths:
     post:
       operationId: createWpV2CiLeadForm
       summary: POST /wp/v2/ci_lead_form
-      description: WordPress REST API route `/wp/v2/ci_lead_form` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/ci_lead_form` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -2639,9 +2579,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/ci_lead_form/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2CiLeadFormById
-      summary: GET /wp/v2/ci_lead_form/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/ci_lead_form/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/ci_lead_form/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/ci_lead_form/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -2680,9 +2619,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2CiLeadFormById
-      summary: POST /wp/v2/ci_lead_form/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/ci_lead_form/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/ci_lead_form/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/ci_lead_form/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -2740,9 +2678,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2CiLeadFormById
-      summary: PUT /wp/v2/ci_lead_form/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/ci_lead_form/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/ci_lead_form/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/ci_lead_form/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -2800,9 +2737,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2CiLeadFormById2
-      summary: PATCH /wp/v2/ci_lead_form/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/ci_lead_form/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/ci_lead_form/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/ci_lead_form/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -2860,9 +2796,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2CiLeadFormById
-      summary: DELETE /wp/v2/ci_lead_form/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/ci_lead_form/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/ci_lead_form/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/ci_lead_form/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -2894,8 +2829,7 @@ paths:
     get:
       operationId: getWpV2Comments
       summary: GET /wp/v2/comments
-      description: WordPress REST API route `/wp/v2/comments` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/comments` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -3061,8 +2995,7 @@ paths:
     post:
       operationId: createWpV2Comments
       summary: POST /wp/v2/comments
-      description: WordPress REST API route `/wp/v2/comments` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/comments` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -3141,9 +3074,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/comments/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2CommentsById
-      summary: GET /wp/v2/comments/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/comments/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/comments/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/comments/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -3182,9 +3114,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2CommentsById
-      summary: POST /wp/v2/comments/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/comments/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/comments/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/comments/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -3253,9 +3184,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2CommentsById
-      summary: PUT /wp/v2/comments/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/comments/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/comments/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/comments/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -3324,9 +3254,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2CommentsById2
-      summary: PATCH /wp/v2/comments/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/comments/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/comments/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/comments/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -3395,9 +3324,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2CommentsById
-      summary: DELETE /wp/v2/comments/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/comments/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/comments/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/comments/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -3434,8 +3362,7 @@ paths:
     get:
       operationId: getWpV2FontCollections
       summary: GET /wp/v2/font-collections
-      description: WordPress REST API route `/wp/v2/font-collections` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/font-collections` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -3489,9 +3416,8 @@ paths:
       description: Path segment `slug` from the WordPress route pattern `/wp/v2/font-collections/(?P<slug>[\/\w-]+)`.
     get:
       operationId: getWpV2FontCollectionsBySlug
-      summary: GET /wp/v2/font-collections/(?P<slug>[\/\w-]+)
-      description: WordPress REST API route `/wp/v2/font-collections/(?P<slug>[\/\w-]+)` in namespace
-        `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/font-collections/(?P[\/\w-]+)
+      description: WordPress REST API route `/wp/v2/font-collections/(?P[\/\w-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -3527,8 +3453,7 @@ paths:
     get:
       operationId: getWpV2FontFamilies
       summary: GET /wp/v2/font-families
-      description: WordPress REST API route `/wp/v2/font-families` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/font-families` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -3628,8 +3553,7 @@ paths:
     post:
       operationId: createWpV2FontFamilies
       summary: POST /wp/v2/font-families
-      description: WordPress REST API route `/wp/v2/font-families` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/font-families` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -3676,9 +3600,8 @@ paths:
       description: Path segment `font_family_id` from the WordPress route pattern `/wp/v2/font-families/(?P<font_family_id>[\d]+)/font-faces`.
     get:
       operationId: getWpV2FontFamiliesByFontFamilyIdFontFaces
-      summary: GET /wp/v2/font-families/(?P<font_family_id>[\d]+)/font-faces
-      description: WordPress REST API route `/wp/v2/font-families/(?P<font_family_id>[\d]+)/font-faces`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/font-families/(?P[\d]+)/font-faces
+      description: WordPress REST API route `/wp/v2/font-families/(?P[\d]+)/font-faces` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -3770,9 +3693,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2FontFamiliesByFontFamilyIdFontFaces
-      summary: POST /wp/v2/font-families/(?P<font_family_id>[\d]+)/font-faces
-      description: WordPress REST API route `/wp/v2/font-families/(?P<font_family_id>[\d]+)/font-faces`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/font-families/(?P[\d]+)/font-faces
+      description: WordPress REST API route `/wp/v2/font-families/(?P[\d]+)/font-faces` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -3825,9 +3747,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/font-families/(?P<font_family_id>[\d]+)/font-faces/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2FontFamiliesByFontFamilyIdFontFacesById
-      summary: GET /wp/v2/font-families/(?P<font_family_id>[\d]+)/font-faces/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/font-families/(?P<font_family_id>[\d]+)/font-faces/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/font-families/(?P[\d]+)/font-faces/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/font-families/(?P[\d]+)/font-faces/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -3861,9 +3782,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2FontFamiliesByFontFamilyIdFontFacesById
-      summary: DELETE /wp/v2/font-families/(?P<font_family_id>[\d]+)/font-faces/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/font-families/(?P<font_family_id>[\d]+)/font-faces/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/font-families/(?P[\d]+)/font-faces/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/font-families/(?P[\d]+)/font-faces/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -3901,9 +3821,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/font-families/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2FontFamiliesById
-      summary: GET /wp/v2/font-families/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/font-families/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/font-families/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/font-families/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -3937,9 +3856,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2FontFamiliesById
-      summary: POST /wp/v2/font-families/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/font-families/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/font-families/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/font-families/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -3978,9 +3896,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2FontFamiliesById
-      summary: PUT /wp/v2/font-families/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/font-families/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/font-families/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/font-families/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -4019,9 +3936,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2FontFamiliesById2
-      summary: PATCH /wp/v2/font-families/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/font-families/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/font-families/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/font-families/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -4060,9 +3976,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2FontFamiliesById
-      summary: DELETE /wp/v2/font-families/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/font-families/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/font-families/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/font-families/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -4100,9 +4015,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/global-styles/(?P<id>[\/\d+]+)`.
     get:
       operationId: getWpV2GlobalStylesById
-      summary: GET /wp/v2/global-styles/(?P<id>[\/\d+]+)
-      description: WordPress REST API route `/wp/v2/global-styles/(?P<id>[\/\d+]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/global-styles/(?P[\/\d+]+)
+      description: WordPress REST API route `/wp/v2/global-styles/(?P[\/\d+]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       responses:
@@ -4125,9 +4039,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2GlobalStylesById
-      summary: POST /wp/v2/global-styles/(?P<id>[\/\d+]+)
-      description: WordPress REST API route `/wp/v2/global-styles/(?P<id>[\/\d+]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/global-styles/(?P[\/\d+]+)
+      description: WordPress REST API route `/wp/v2/global-styles/(?P[\/\d+]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -4166,9 +4079,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2GlobalStylesById
-      summary: PUT /wp/v2/global-styles/(?P<id>[\/\d+]+)
-      description: WordPress REST API route `/wp/v2/global-styles/(?P<id>[\/\d+]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/global-styles/(?P[\/\d+]+)
+      description: WordPress REST API route `/wp/v2/global-styles/(?P[\/\d+]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -4207,9 +4119,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2GlobalStylesById2
-      summary: PATCH /wp/v2/global-styles/(?P<id>[\/\d+]+)
-      description: WordPress REST API route `/wp/v2/global-styles/(?P<id>[\/\d+]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/global-styles/(?P[\/\d+]+)
+      description: WordPress REST API route `/wp/v2/global-styles/(?P[\/\d+]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -4256,9 +4167,8 @@ paths:
       description: Path segment `parent` from the WordPress route pattern `/wp/v2/global-styles/(?P<parent>[\d]+)/revisions`.
     get:
       operationId: getWpV2GlobalStylesByParentRevisions
-      summary: GET /wp/v2/global-styles/(?P<parent>[\d]+)/revisions
-      description: WordPress REST API route `/wp/v2/global-styles/(?P<parent>[\d]+)/revisions` in namespace
-        `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/global-styles/(?P[\d]+)/revisions
+      description: WordPress REST API route `/wp/v2/global-styles/(?P[\d]+)/revisions` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -4322,9 +4232,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/global-styles/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2GlobalStylesByParentRevisionsById
-      summary: GET /wp/v2/global-styles/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/global-styles/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/global-styles/(?P[\d]+)/revisions/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/global-styles/(?P[\d]+)/revisions/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -4366,9 +4275,8 @@ paths:
       description: Path segment `stylesheet` from the WordPress route pattern `/wp/v2/global-styles/themes/(?P<stylesheet>[\/\s%\w\.\(\)\[\]\@_\-]+)/variations`.
     get:
       operationId: getWpV2GlobalStylesThemesByStylesheetVariations
-      summary: GET /wp/v2/global-styles/themes/(?P<stylesheet>[\/\s%\w\.\(\)\[\]\@_\-]+)/variations
-      description: WordPress REST API route `/wp/v2/global-styles/themes/(?P<stylesheet>[\/\s%\w\.\(\)\[\]\@_\-]+)/variations`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/global-styles/themes/(?P[\/\s%\w\.\(\)\[\]\@_\-]+)/variations
+      description: WordPress REST API route `/wp/v2/global-styles/themes/(?P[\/\s%\w\.\(\)\[\]\@_\-]+)/variations` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       responses:
@@ -4399,9 +4307,8 @@ paths:
       description: Path segment `stylesheet` from the WordPress route pattern `/wp/v2/global-styles/themes/(?P<stylesheet>[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)`.
     get:
       operationId: getWpV2GlobalStylesThemesByStylesheet
-      summary: GET /wp/v2/global-styles/themes/(?P<stylesheet>[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)
-      description: WordPress REST API route `/wp/v2/global-styles/themes/(?P<stylesheet>[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/global-styles/themes/(?P[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)
+      description: WordPress REST API route `/wp/v2/global-styles/themes/(?P[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       responses:
@@ -4426,8 +4333,7 @@ paths:
     get:
       operationId: getWpV2Icons
       summary: GET /wp/v2/icons
-      description: WordPress REST API route `/wp/v2/icons` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/icons` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -4486,9 +4392,8 @@ paths:
       description: Path segment `name` from the WordPress route pattern `/wp/v2/icons/(?P<name>[a-z][a-z0-9-]*/[a-z][a-z0-9-]*)`.
     get:
       operationId: getWpV2IconsByName
-      summary: GET /wp/v2/icons/(?P<name>[a-z][a-z0-9-]*/[a-z][a-z0-9-]*)
-      description: WordPress REST API route `/wp/v2/icons/(?P<name>[a-z][a-z0-9-]*/[a-z][a-z0-9-]*)` in
-        namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/icons/(?P[a-z][a-z0-9-]*/[a-z][a-z0-9-]*)
+      description: WordPress REST API route `/wp/v2/icons/(?P[a-z][a-z0-9-]*/[a-z][a-z0-9-]*)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -4524,8 +4429,7 @@ paths:
     get:
       operationId: getWpV2Media
       summary: GET /wp/v2/media
-      description: WordPress REST API route `/wp/v2/media` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/media` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -4720,8 +4624,7 @@ paths:
     post:
       operationId: createWpV2Media
       summary: POST /wp/v2/media
-      description: WordPress REST API route `/wp/v2/media` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/media` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -4817,9 +4720,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/media/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2MediaById
-      summary: GET /wp/v2/media/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/media/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/media/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/media/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -4853,9 +4755,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2MediaById
-      summary: POST /wp/v2/media/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/media/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/media/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/media/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -4943,9 +4844,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2MediaById
-      summary: PUT /wp/v2/media/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/media/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/media/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/media/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -5033,9 +4933,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2MediaById2
-      summary: PATCH /wp/v2/media/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/media/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/media/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/media/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -5123,9 +5022,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2MediaById
-      summary: DELETE /wp/v2/media/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/media/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/media/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/media/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -5163,9 +5061,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/media/(?P<id>[\d]+)/edit`.
     post:
       operationId: createWpV2MediaByIdEdit
-      summary: POST /wp/v2/media/(?P<id>[\d]+)/edit
-      description: WordPress REST API route `/wp/v2/media/(?P<id>[\d]+)/edit` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/media/(?P[\d]+)/edit
+      description: WordPress REST API route `/wp/v2/media/(?P[\d]+)/edit` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -5187,24 +5084,19 @@ paths:
                   description: Array of image edits.
                 rotation:
                   type: integer
-                  description: 'The amount to rotate the image clockwise in degrees. DEPRECATED: Use `modifiers`
-                    instead.'
+                  description: 'The amount to rotate the image clockwise in degrees. DEPRECATED: Use `modifiers` instead.'
                 x:
                   type: number
-                  description: 'As a percentage of the image, the x position to start the crop from. DEPRECATED:
-                    Use `modifiers` instead.'
+                  description: 'As a percentage of the image, the x position to start the crop from. DEPRECATED: Use `modifiers` instead.'
                 y:
                   type: number
-                  description: 'As a percentage of the image, the y position to start the crop from. DEPRECATED:
-                    Use `modifiers` instead.'
+                  description: 'As a percentage of the image, the y position to start the crop from. DEPRECATED: Use `modifiers` instead.'
                 width:
                   type: number
-                  description: 'As a percentage of the image, the width to crop the image to. DEPRECATED:
-                    Use `modifiers` instead.'
+                  description: 'As a percentage of the image, the width to crop the image to. DEPRECATED: Use `modifiers` instead.'
                 height:
                   type: number
-                  description: 'As a percentage of the image, the height to crop the image to. DEPRECATED:
-                    Use `modifiers` instead.'
+                  description: 'As a percentage of the image, the height to crop the image to. DEPRECATED: Use `modifiers` instead.'
                 caption:
                   type: object
                   description: The attachment caption.
@@ -5248,9 +5140,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/media/(?P<id>[\d]+)/post-process`.
     post:
       operationId: createWpV2MediaByIdPostProcess
-      summary: POST /wp/v2/media/(?P<id>[\d]+)/post-process
-      description: WordPress REST API route `/wp/v2/media/(?P<id>[\d]+)/post-process` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/media/(?P[\d]+)/post-process
+      description: WordPress REST API route `/wp/v2/media/(?P[\d]+)/post-process` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -5288,8 +5179,7 @@ paths:
     get:
       operationId: getWpV2MenuItems
       summary: GET /wp/v2/menu-items
-      description: WordPress REST API route `/wp/v2/menu-items` in namespace `wp/v2`, as advertised by
-        the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/menu-items` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -5435,8 +5325,7 @@ paths:
         in: query
         schema:
           type: object
-        description: Limit result set to items except those with specific terms assigned in the menus
-          taxonomy.
+        description: Limit result set to items except those with specific terms assigned in the menus taxonomy.
       - name: menu_order
         in: query
         schema:
@@ -5463,8 +5352,7 @@ paths:
     post:
       operationId: createWpV2MenuItems
       summary: POST /wp/v2/menu-items
-      description: WordPress REST API route `/wp/v2/menu-items` in namespace `wp/v2`, as advertised by
-        the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/menu-items` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -5515,17 +5403,14 @@ paths:
                 menu_order:
                   type: integer
                   default: 1
-                  description: The DB ID of the nav_menu_item that is this item's menu parent, if any,
-                    otherwise 0.
+                  description: The DB ID of the nav_menu_item that is this item's menu parent, if any, otherwise 0.
                 object:
                   type: string
-                  description: The type of object originally represented, such as "category", "post",
-                    or "attachment".
+                  description: The type of object originally represented, such as "category", "post", or "attachment".
                 object_id:
                   type: integer
                   default: 0
-                  description: The database ID of the original object this menu item represents, for example
-                    the ID for posts or the term_id for categories.
+                  description: The database ID of the original object this menu item represents, for example the ID for posts or the term_id for categories.
                 target:
                   type: string
                   enum:
@@ -5574,9 +5459,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/menu-items/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2MenuItemsById
-      summary: GET /wp/v2/menu-items/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/menu-items/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/menu-items/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/menu-items/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -5610,9 +5494,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2MenuItemsById
-      summary: POST /wp/v2/menu-items/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/menu-items/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/menu-items/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/menu-items/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -5659,16 +5542,13 @@ paths:
                   description: The description of this menu item.
                 menu_order:
                   type: integer
-                  description: The DB ID of the nav_menu_item that is this item's menu parent, if any,
-                    otherwise 0.
+                  description: The DB ID of the nav_menu_item that is this item's menu parent, if any, otherwise 0.
                 object:
                   type: string
-                  description: The type of object originally represented, such as "category", "post",
-                    or "attachment".
+                  description: The type of object originally represented, such as "category", "post", or "attachment".
                 object_id:
                   type: integer
-                  description: The database ID of the original object this menu item represents, for example
-                    the ID for posts or the term_id for categories.
+                  description: The database ID of the original object this menu item represents, for example the ID for posts or the term_id for categories.
                 target:
                   type: string
                   enum:
@@ -5709,9 +5589,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2MenuItemsById
-      summary: PUT /wp/v2/menu-items/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/menu-items/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/menu-items/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/menu-items/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -5758,16 +5637,13 @@ paths:
                   description: The description of this menu item.
                 menu_order:
                   type: integer
-                  description: The DB ID of the nav_menu_item that is this item's menu parent, if any,
-                    otherwise 0.
+                  description: The DB ID of the nav_menu_item that is this item's menu parent, if any, otherwise 0.
                 object:
                   type: string
-                  description: The type of object originally represented, such as "category", "post",
-                    or "attachment".
+                  description: The type of object originally represented, such as "category", "post", or "attachment".
                 object_id:
                   type: integer
-                  description: The database ID of the original object this menu item represents, for example
-                    the ID for posts or the term_id for categories.
+                  description: The database ID of the original object this menu item represents, for example the ID for posts or the term_id for categories.
                 target:
                   type: string
                   enum:
@@ -5808,9 +5684,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2MenuItemsById2
-      summary: PATCH /wp/v2/menu-items/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/menu-items/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/menu-items/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/menu-items/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -5857,16 +5732,13 @@ paths:
                   description: The description of this menu item.
                 menu_order:
                   type: integer
-                  description: The DB ID of the nav_menu_item that is this item's menu parent, if any,
-                    otherwise 0.
+                  description: The DB ID of the nav_menu_item that is this item's menu parent, if any, otherwise 0.
                 object:
                   type: string
-                  description: The type of object originally represented, such as "category", "post",
-                    or "attachment".
+                  description: The type of object originally represented, such as "category", "post", or "attachment".
                 object_id:
                   type: integer
-                  description: The database ID of the original object this menu item represents, for example
-                    the ID for posts or the term_id for categories.
+                  description: The database ID of the original object this menu item represents, for example the ID for posts or the term_id for categories.
                 target:
                   type: string
                   enum:
@@ -5907,9 +5779,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2MenuItemsById
-      summary: DELETE /wp/v2/menu-items/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/menu-items/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/menu-items/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/menu-items/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -5947,9 +5818,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/menu-items/(?P<id>[\d]+)/autosaves`.
     get:
       operationId: getWpV2MenuItemsByIdAutosaves
-      summary: GET /wp/v2/menu-items/(?P<id>[\d]+)/autosaves
-      description: WordPress REST API route `/wp/v2/menu-items/(?P<id>[\d]+)/autosaves` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/menu-items/(?P[\d]+)/autosaves
+      description: WordPress REST API route `/wp/v2/menu-items/(?P[\d]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -5988,9 +5858,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2MenuItemsByIdAutosaves
-      summary: POST /wp/v2/menu-items/(?P<id>[\d]+)/autosaves
-      description: WordPress REST API route `/wp/v2/menu-items/(?P<id>[\d]+)/autosaves` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/menu-items/(?P[\d]+)/autosaves
+      description: WordPress REST API route `/wp/v2/menu-items/(?P[\d]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -6037,16 +5906,13 @@ paths:
                   description: The description of this menu item.
                 menu_order:
                   type: integer
-                  description: The DB ID of the nav_menu_item that is this item's menu parent, if any,
-                    otherwise 0.
+                  description: The DB ID of the nav_menu_item that is this item's menu parent, if any, otherwise 0.
                 object:
                   type: string
-                  description: The type of object originally represented, such as "category", "post",
-                    or "attachment".
+                  description: The type of object originally represented, such as "category", "post", or "attachment".
                 object_id:
                   type: integer
-                  description: The database ID of the original object this menu item represents, for example
-                    the ID for posts or the term_id for categories.
+                  description: The database ID of the original object this menu item represents, for example the ID for posts or the term_id for categories.
                 target:
                   type: string
                   enum:
@@ -6101,9 +5967,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/menu-items/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2MenuItemsByParentAutosavesById
-      summary: GET /wp/v2/menu-items/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/menu-items/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/menu-items/(?P[\d]+)/autosaves/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/menu-items/(?P[\d]+)/autosaves/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6139,8 +6004,7 @@ paths:
     get:
       operationId: getWpV2MenuLocations
       summary: GET /wp/v2/menu-locations
-      description: WordPress REST API route `/wp/v2/menu-locations` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/menu-locations` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6182,9 +6046,8 @@ paths:
       description: Path segment `location` from the WordPress route pattern `/wp/v2/menu-locations/(?P<location>[\w-]+)`.
     get:
       operationId: getWpV2MenuLocationsByLocation
-      summary: GET /wp/v2/menu-locations/(?P<location>[\w-]+)
-      description: WordPress REST API route `/wp/v2/menu-locations/(?P<location>[\w-]+)` in namespace
-        `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/menu-locations/(?P[\w-]+)
+      description: WordPress REST API route `/wp/v2/menu-locations/(?P[\w-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6220,8 +6083,7 @@ paths:
     get:
       operationId: getWpV2Menus
       summary: GET /wp/v2/menus
-      description: WordPress REST API route `/wp/v2/menus` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/menus` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6336,8 +6198,7 @@ paths:
     post:
       operationId: createWpV2Menus
       summary: POST /wp/v2/menus
-      description: WordPress REST API route `/wp/v2/menus` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/menus` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -6397,9 +6258,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/menus/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2MenusById
-      summary: GET /wp/v2/menus/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/menus/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/menus/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/menus/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6433,9 +6293,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2MenusById
-      summary: POST /wp/v2/menus/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/menus/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/menus/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/menus/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -6485,9 +6344,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2MenusById
-      summary: PUT /wp/v2/menus/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/menus/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/menus/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/menus/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -6537,9 +6395,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2MenusById2
-      summary: PATCH /wp/v2/menus/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/menus/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/menus/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/menus/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -6589,9 +6446,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2MenusById
-      summary: DELETE /wp/v2/menus/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/menus/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/menus/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/menus/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6623,8 +6479,7 @@ paths:
     get:
       operationId: getWpV2Navigation
       summary: GET /wp/v2/navigation
-      description: WordPress REST API route `/wp/v2/navigation` in namespace `wp/v2`, as advertised by
-        the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/navigation` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6773,8 +6628,7 @@ paths:
     post:
       operationId: createWpV2Navigation
       summary: POST /wp/v2/navigation
-      description: WordPress REST API route `/wp/v2/navigation` in namespace `wp/v2`, as advertised by
-        the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/navigation` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -6843,9 +6697,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/navigation/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2NavigationById
-      summary: GET /wp/v2/navigation/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/navigation/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/navigation/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/navigation/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -6884,9 +6737,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2NavigationById
-      summary: POST /wp/v2/navigation/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/navigation/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/navigation/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/navigation/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -6947,9 +6799,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2NavigationById
-      summary: PUT /wp/v2/navigation/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/navigation/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/navigation/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/navigation/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -7010,9 +6861,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2NavigationById2
-      summary: PATCH /wp/v2/navigation/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/navigation/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/navigation/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/navigation/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -7073,9 +6923,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2NavigationById
-      summary: DELETE /wp/v2/navigation/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/navigation/(?P<id>[\d]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/navigation/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/navigation/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -7113,9 +6962,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/navigation/(?P<id>[\d]+)/autosaves`.
     get:
       operationId: getWpV2NavigationByIdAutosaves
-      summary: GET /wp/v2/navigation/(?P<id>[\d]+)/autosaves
-      description: WordPress REST API route `/wp/v2/navigation/(?P<id>[\d]+)/autosaves` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/navigation/(?P[\d]+)/autosaves
+      description: WordPress REST API route `/wp/v2/navigation/(?P[\d]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -7154,9 +7002,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2NavigationByIdAutosaves
-      summary: POST /wp/v2/navigation/(?P<id>[\d]+)/autosaves
-      description: WordPress REST API route `/wp/v2/navigation/(?P<id>[\d]+)/autosaves` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/navigation/(?P[\d]+)/autosaves
+      description: WordPress REST API route `/wp/v2/navigation/(?P[\d]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -7234,9 +7081,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/navigation/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2NavigationByParentAutosavesById
-      summary: GET /wp/v2/navigation/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/navigation/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/navigation/(?P[\d]+)/autosaves/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/navigation/(?P[\d]+)/autosaves/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -7278,9 +7124,8 @@ paths:
       description: Path segment `parent` from the WordPress route pattern `/wp/v2/navigation/(?P<parent>[\d]+)/revisions`.
     get:
       operationId: getWpV2NavigationByParentRevisions
-      summary: GET /wp/v2/navigation/(?P<parent>[\d]+)/revisions
-      description: WordPress REST API route `/wp/v2/navigation/(?P<parent>[\d]+)/revisions` in namespace
-        `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/navigation/(?P[\d]+)/revisions
+      description: WordPress REST API route `/wp/v2/navigation/(?P[\d]+)/revisions` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -7388,9 +7233,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/navigation/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2NavigationByParentRevisionsById
-      summary: GET /wp/v2/navigation/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/navigation/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/navigation/(?P[\d]+)/revisions/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/navigation/(?P[\d]+)/revisions/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -7424,9 +7268,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2NavigationByParentRevisionsById
-      summary: DELETE /wp/v2/navigation/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/navigation/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/navigation/(?P[\d]+)/revisions/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/navigation/(?P[\d]+)/revisions/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -7458,8 +7301,7 @@ paths:
     get:
       operationId: getWpV2Pages
       summary: GET /wp/v2/pages
-      description: WordPress REST API route `/wp/v2/pages` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/pages` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -7646,8 +7488,7 @@ paths:
     post:
       operationId: createWpV2Pages
       summary: POST /wp/v2/pages
-      description: WordPress REST API route `/wp/v2/pages` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/pages` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -7746,9 +7587,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/pages/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2PagesById
-      summary: GET /wp/v2/pages/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/pages/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/pages/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/pages/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -7792,9 +7632,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2PagesById
-      summary: POST /wp/v2/pages/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/pages/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/pages/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/pages/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -7885,9 +7724,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2PagesById
-      summary: PUT /wp/v2/pages/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/pages/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/pages/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/pages/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -7978,9 +7816,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2PagesById2
-      summary: PATCH /wp/v2/pages/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/pages/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/pages/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/pages/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -8071,9 +7908,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2PagesById
-      summary: DELETE /wp/v2/pages/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/pages/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/pages/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/pages/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -8111,9 +7947,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/pages/(?P<id>[\d]+)/autosaves`.
     get:
       operationId: getWpV2PagesByIdAutosaves
-      summary: GET /wp/v2/pages/(?P<id>[\d]+)/autosaves
-      description: WordPress REST API route `/wp/v2/pages/(?P<id>[\d]+)/autosaves` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/pages/(?P[\d]+)/autosaves
+      description: WordPress REST API route `/wp/v2/pages/(?P[\d]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -8152,9 +7987,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2PagesByIdAutosaves
-      summary: POST /wp/v2/pages/(?P<id>[\d]+)/autosaves
-      description: WordPress REST API route `/wp/v2/pages/(?P<id>[\d]+)/autosaves` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/pages/(?P[\d]+)/autosaves
+      description: WordPress REST API route `/wp/v2/pages/(?P[\d]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -8259,9 +8093,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/pages/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2PagesByParentAutosavesById
-      summary: GET /wp/v2/pages/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/pages/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)` in
-        namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/pages/(?P[\d]+)/autosaves/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/pages/(?P[\d]+)/autosaves/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -8303,9 +8136,8 @@ paths:
       description: Path segment `parent` from the WordPress route pattern `/wp/v2/pages/(?P<parent>[\d]+)/revisions`.
     get:
       operationId: getWpV2PagesByParentRevisions
-      summary: GET /wp/v2/pages/(?P<parent>[\d]+)/revisions
-      description: WordPress REST API route `/wp/v2/pages/(?P<parent>[\d]+)/revisions` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/pages/(?P[\d]+)/revisions
+      description: WordPress REST API route `/wp/v2/pages/(?P[\d]+)/revisions` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -8413,9 +8245,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/pages/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2PagesByParentRevisionsById
-      summary: GET /wp/v2/pages/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/pages/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in
-        namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/pages/(?P[\d]+)/revisions/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/pages/(?P[\d]+)/revisions/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -8449,9 +8280,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2PagesByParentRevisionsById
-      summary: DELETE /wp/v2/pages/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/pages/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in
-        namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/pages/(?P[\d]+)/revisions/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/pages/(?P[\d]+)/revisions/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -8483,8 +8313,7 @@ paths:
     get:
       operationId: getWpV2PatternDirectoryPatterns
       summary: GET /wp/v2/pattern-directory/patterns
-      description: WordPress REST API route `/wp/v2/pattern-directory/patterns` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/pattern-directory/patterns` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -8584,8 +8413,7 @@ paths:
     get:
       operationId: getWpV2Plugins
       summary: GET /wp/v2/plugins
-      description: WordPress REST API route `/wp/v2/plugins` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/plugins` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -8632,8 +8460,7 @@ paths:
     post:
       operationId: createWpV2Plugins
       summary: POST /wp/v2/plugins
-      description: WordPress REST API route `/wp/v2/plugins` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/plugins` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -8683,9 +8510,8 @@ paths:
       description: Path segment `plugin` from the WordPress route pattern `/wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)`.
     get:
       operationId: getWpV2PluginsByPlugin
-      summary: GET /wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)
-      description: WordPress REST API route `/wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)` in namespace
-        `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/plugins/(?P[^.\/]+(?:\/[^.\/]+)?)
+      description: WordPress REST API route `/wp/v2/plugins/(?P[^.\/]+(?:\/[^.\/]+)?)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -8719,9 +8545,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2PluginsByPlugin
-      summary: POST /wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)
-      description: WordPress REST API route `/wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)` in namespace
-        `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/plugins/(?P[^.\/]+(?:\/[^.\/]+)?)
+      description: WordPress REST API route `/wp/v2/plugins/(?P[^.\/]+(?:\/[^.\/]+)?)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -8765,9 +8590,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2PluginsByPlugin
-      summary: PUT /wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)
-      description: WordPress REST API route `/wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)` in namespace
-        `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/plugins/(?P[^.\/]+(?:\/[^.\/]+)?)
+      description: WordPress REST API route `/wp/v2/plugins/(?P[^.\/]+(?:\/[^.\/]+)?)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -8811,9 +8635,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2PluginsByPlugin2
-      summary: PATCH /wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)
-      description: WordPress REST API route `/wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)` in namespace
-        `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/plugins/(?P[^.\/]+(?:\/[^.\/]+)?)
+      description: WordPress REST API route `/wp/v2/plugins/(?P[^.\/]+(?:\/[^.\/]+)?)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -8857,9 +8680,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2PluginsByPlugin
-      summary: DELETE /wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)
-      description: WordPress REST API route `/wp/v2/plugins/(?P<plugin>[^.\/]+(?:\/[^.\/]+)?)` in namespace
-        `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/plugins/(?P[^.\/]+(?:\/[^.\/]+)?)
+      description: WordPress REST API route `/wp/v2/plugins/(?P[^.\/]+(?:\/[^.\/]+)?)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -8895,8 +8717,7 @@ paths:
     get:
       operationId: getWpV2Posts
       summary: GET /wp/v2/posts
-      description: WordPress REST API route `/wp/v2/posts` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/posts` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -9057,8 +8878,7 @@ paths:
         in: query
         schema:
           type: object
-        description: Limit result set to items except those with specific terms assigned in the categories
-          taxonomy.
+        description: Limit result set to items except those with specific terms assigned in the categories taxonomy.
       - name: tags
         in: query
         schema:
@@ -9108,8 +8928,7 @@ paths:
     post:
       operationId: createWpV2Posts
       summary: POST /wp/v2/posts
-      description: WordPress REST API route `/wp/v2/posts` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/posts` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -9229,9 +9048,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/posts/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2PostsById
-      summary: GET /wp/v2/posts/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/posts/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/posts/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/posts/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -9275,9 +9093,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2PostsById
-      summary: POST /wp/v2/posts/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/posts/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/posts/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/posts/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -9389,9 +9206,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2PostsById
-      summary: PUT /wp/v2/posts/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/posts/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/posts/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/posts/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -9503,9 +9319,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2PostsById2
-      summary: PATCH /wp/v2/posts/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/posts/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/posts/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/posts/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -9617,9 +9432,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2PostsById
-      summary: DELETE /wp/v2/posts/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/posts/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/posts/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/posts/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -9657,9 +9471,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/posts/(?P<id>[\d]+)/autosaves`.
     get:
       operationId: getWpV2PostsByIdAutosaves
-      summary: GET /wp/v2/posts/(?P<id>[\d]+)/autosaves
-      description: WordPress REST API route `/wp/v2/posts/(?P<id>[\d]+)/autosaves` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/posts/(?P[\d]+)/autosaves
+      description: WordPress REST API route `/wp/v2/posts/(?P[\d]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -9698,9 +9511,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2PostsByIdAutosaves
-      summary: POST /wp/v2/posts/(?P<id>[\d]+)/autosaves
-      description: WordPress REST API route `/wp/v2/posts/(?P<id>[\d]+)/autosaves` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/posts/(?P[\d]+)/autosaves
+      description: WordPress REST API route `/wp/v2/posts/(?P[\d]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -9829,9 +9641,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/posts/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2PostsByParentAutosavesById
-      summary: GET /wp/v2/posts/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/posts/(?P<parent>[\d]+)/autosaves/(?P<id>[\d]+)` in
-        namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/posts/(?P[\d]+)/autosaves/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/posts/(?P[\d]+)/autosaves/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -9873,9 +9684,8 @@ paths:
       description: Path segment `parent` from the WordPress route pattern `/wp/v2/posts/(?P<parent>[\d]+)/revisions`.
     get:
       operationId: getWpV2PostsByParentRevisions
-      summary: GET /wp/v2/posts/(?P<parent>[\d]+)/revisions
-      description: WordPress REST API route `/wp/v2/posts/(?P<parent>[\d]+)/revisions` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/posts/(?P[\d]+)/revisions
+      description: WordPress REST API route `/wp/v2/posts/(?P[\d]+)/revisions` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -9983,9 +9793,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/posts/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2PostsByParentRevisionsById
-      summary: GET /wp/v2/posts/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/posts/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in
-        namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/posts/(?P[\d]+)/revisions/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/posts/(?P[\d]+)/revisions/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -10019,9 +9828,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2PostsByParentRevisionsById
-      summary: DELETE /wp/v2/posts/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/posts/(?P<parent>[\d]+)/revisions/(?P<id>[\d]+)` in
-        namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/posts/(?P[\d]+)/revisions/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/posts/(?P[\d]+)/revisions/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -10053,8 +9861,7 @@ paths:
     get:
       operationId: getWpV2Search
       summary: GET /wp/v2/search
-      description: WordPress REST API route `/wp/v2/search` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/search` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -10140,8 +9947,7 @@ paths:
     get:
       operationId: getWpV2Settings
       summary: GET /wp/v2/settings
-      description: WordPress REST API route `/wp/v2/settings` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/settings` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       responses:
@@ -10165,8 +9971,7 @@ paths:
     post:
       operationId: createWpV2Settings
       summary: POST /wp/v2/settings
-      description: WordPress REST API route `/wp/v2/settings` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/settings` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -10229,8 +10034,7 @@ paths:
                   enum:
                   - open
                   - closed
-                  description: Allow link notifications from other blogs (pingbacks and trackbacks) on
-                    new articles.
+                  description: Allow link notifications from other blogs (pingbacks and trackbacks) on new articles.
                 default_comment_status:
                   type: string
                   enum:
@@ -10264,8 +10068,7 @@ paths:
     put:
       operationId: updateWpV2Settings
       summary: PUT /wp/v2/settings
-      description: WordPress REST API route `/wp/v2/settings` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/settings` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -10328,8 +10131,7 @@ paths:
                   enum:
                   - open
                   - closed
-                  description: Allow link notifications from other blogs (pingbacks and trackbacks) on
-                    new articles.
+                  description: Allow link notifications from other blogs (pingbacks and trackbacks) on new articles.
                 default_comment_status:
                   type: string
                   enum:
@@ -10363,8 +10165,7 @@ paths:
     patch:
       operationId: updateWpV2Settings2
       summary: PATCH /wp/v2/settings
-      description: WordPress REST API route `/wp/v2/settings` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/settings` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -10427,8 +10228,7 @@ paths:
                   enum:
                   - open
                   - closed
-                  description: Allow link notifications from other blogs (pingbacks and trackbacks) on
-                    new articles.
+                  description: Allow link notifications from other blogs (pingbacks and trackbacks) on new articles.
                 default_comment_status:
                   type: string
                   enum:
@@ -10463,8 +10263,7 @@ paths:
     get:
       operationId: getWpV2Sidebars
       summary: GET /wp/v2/sidebars
-      description: WordPress REST API route `/wp/v2/sidebars` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/sidebars` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -10506,9 +10305,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/sidebars/(?P<id>[\w-]+)`.
     get:
       operationId: getWpV2SidebarsById
-      summary: GET /wp/v2/sidebars/(?P<id>[\w-]+)
-      description: WordPress REST API route `/wp/v2/sidebars/(?P<id>[\w-]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/sidebars/(?P[\w-]+)
+      description: WordPress REST API route `/wp/v2/sidebars/(?P[\w-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -10542,9 +10340,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2SidebarsById
-      summary: POST /wp/v2/sidebars/(?P<id>[\w-]+)
-      description: WordPress REST API route `/wp/v2/sidebars/(?P<id>[\w-]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/sidebars/(?P[\w-]+)
+      description: WordPress REST API route `/wp/v2/sidebars/(?P[\w-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -10579,9 +10376,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2SidebarsById
-      summary: PUT /wp/v2/sidebars/(?P<id>[\w-]+)
-      description: WordPress REST API route `/wp/v2/sidebars/(?P<id>[\w-]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/sidebars/(?P[\w-]+)
+      description: WordPress REST API route `/wp/v2/sidebars/(?P[\w-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -10616,9 +10412,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2SidebarsById2
-      summary: PATCH /wp/v2/sidebars/(?P<id>[\w-]+)
-      description: WordPress REST API route `/wp/v2/sidebars/(?P<id>[\w-]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/sidebars/(?P[\w-]+)
+      description: WordPress REST API route `/wp/v2/sidebars/(?P[\w-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -10655,8 +10450,7 @@ paths:
     get:
       operationId: getWpV2Statuses
       summary: GET /wp/v2/statuses
-      description: WordPress REST API route `/wp/v2/statuses` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/statuses` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -10698,9 +10492,8 @@ paths:
       description: Path segment `status` from the WordPress route pattern `/wp/v2/statuses/(?P<status>[\w-]+)`.
     get:
       operationId: getWpV2StatusesByStatus
-      summary: GET /wp/v2/statuses/(?P<status>[\w-]+)
-      description: WordPress REST API route `/wp/v2/statuses/(?P<status>[\w-]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/statuses/(?P[\w-]+)
+      description: WordPress REST API route `/wp/v2/statuses/(?P[\w-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -10736,8 +10529,7 @@ paths:
     get:
       operationId: getWpV2SupplierLeadForm
       summary: GET /wp/v2/supplier_lead_form
-      description: WordPress REST API route `/wp/v2/supplier_lead_form` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/supplier_lead_form` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -10886,8 +10678,7 @@ paths:
     post:
       operationId: createWpV2SupplierLeadForm
       summary: POST /wp/v2/supplier_lead_form
-      description: WordPress REST API route `/wp/v2/supplier_lead_form` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/supplier_lead_form` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -10953,9 +10744,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/supplier_lead_form/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2SupplierLeadFormById
-      summary: GET /wp/v2/supplier_lead_form/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/supplier_lead_form/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/supplier_lead_form/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/supplier_lead_form/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -10994,9 +10784,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2SupplierLeadFormById
-      summary: POST /wp/v2/supplier_lead_form/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/supplier_lead_form/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/supplier_lead_form/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/supplier_lead_form/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -11054,9 +10843,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2SupplierLeadFormById
-      summary: PUT /wp/v2/supplier_lead_form/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/supplier_lead_form/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/supplier_lead_form/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/supplier_lead_form/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -11114,9 +10902,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2SupplierLeadFormById2
-      summary: PATCH /wp/v2/supplier_lead_form/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/supplier_lead_form/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/supplier_lead_form/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/supplier_lead_form/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -11174,9 +10961,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2SupplierLeadFormById
-      summary: DELETE /wp/v2/supplier_lead_form/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/supplier_lead_form/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/supplier_lead_form/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/supplier_lead_form/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -11208,8 +10994,7 @@ paths:
     get:
       operationId: getWpV2Tags
       summary: GET /wp/v2/tags
-      description: WordPress REST API route `/wp/v2/tags` in namespace `wp/v2`, as advertised by the live
-        route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/tags` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -11324,8 +11109,7 @@ paths:
     post:
       operationId: createWpV2Tags
       summary: POST /wp/v2/tags
-      description: WordPress REST API route `/wp/v2/tags` in namespace `wp/v2`, as advertised by the live
-        route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/tags` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -11377,9 +11161,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/tags/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2TagsById
-      summary: GET /wp/v2/tags/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/tags/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/tags/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/tags/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -11413,9 +11196,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2TagsById
-      summary: POST /wp/v2/tags/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/tags/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/tags/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/tags/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -11457,9 +11239,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2TagsById
-      summary: PUT /wp/v2/tags/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/tags/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/tags/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/tags/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -11501,9 +11282,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2TagsById2
-      summary: PATCH /wp/v2/tags/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/tags/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/tags/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/tags/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -11545,9 +11325,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2TagsById
-      summary: DELETE /wp/v2/tags/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/tags/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/tags/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/tags/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -11579,8 +11358,7 @@ paths:
     get:
       operationId: getWpV2Taxonomies
       summary: GET /wp/v2/taxonomies
-      description: WordPress REST API route `/wp/v2/taxonomies` in namespace `wp/v2`, as advertised by
-        the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/taxonomies` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -11627,9 +11405,8 @@ paths:
       description: Path segment `taxonomy` from the WordPress route pattern `/wp/v2/taxonomies/(?P<taxonomy>[\w-]+)`.
     get:
       operationId: getWpV2TaxonomiesByTaxonomy
-      summary: GET /wp/v2/taxonomies/(?P<taxonomy>[\w-]+)
-      description: WordPress REST API route `/wp/v2/taxonomies/(?P<taxonomy>[\w-]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/taxonomies/(?P[\w-]+)
+      description: WordPress REST API route `/wp/v2/taxonomies/(?P[\w-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -11665,8 +11442,7 @@ paths:
     get:
       operationId: getWpV2TemplateParts
       summary: GET /wp/v2/template-parts
-      description: WordPress REST API route `/wp/v2/template-parts` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/template-parts` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -11716,8 +11492,7 @@ paths:
     post:
       operationId: createWpV2TemplateParts
       summary: POST /wp/v2/template-parts
-      description: WordPress REST API route `/wp/v2/template-parts` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/template-parts` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -11795,9 +11570,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)`.
     get:
       operationId: getWpV2TemplatePartsById
-      summary: GET /wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
+      description: WordPress REST API route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -11831,9 +11605,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2TemplatePartsById
-      summary: POST /wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+…
+      description: WordPress REST API route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -11897,9 +11670,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2TemplatePartsById
-      summary: PUT /wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
+      description: WordPress REST API route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -11963,9 +11735,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2TemplatePartsById2
-      summary: PATCH /wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]…
+      description: WordPress REST API route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -12029,9 +11800,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2TemplatePartsById
-      summary: DELETE /wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%…
+      description: WordPress REST API route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -12069,9 +11839,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves`.
     get:
       operationId: getWpV2TemplatePartsByIdAutosaves
-      summary: GET /wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)…
+      description: WordPress REST API route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -12105,9 +11874,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2TemplatePartsByIdAutosaves
-      summary: POST /wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+…
+      description: WordPress REST API route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -12185,9 +11953,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2TemplatePartsByParentAutosavesById
-      summary: GET /wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)…
+      description: WordPress REST API route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -12229,9 +11996,8 @@ paths:
       description: Path segment `parent` from the WordPress route pattern `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions`.
     get:
       operationId: getWpV2TemplatePartsByParentRevisions
-      summary: GET /wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)…
+      description: WordPress REST API route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -12339,9 +12105,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2TemplatePartsByParentRevisionsById
-      summary: GET /wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)…
+      description: WordPress REST API route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -12375,9 +12140,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2TemplatePartsByParentRevisionsById
-      summary: DELETE /wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/template-parts/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%…
+      description: WordPress REST API route `/wp/v2/template-parts/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -12409,8 +12173,7 @@ paths:
     get:
       operationId: getWpV2TemplatePartsLookup
       summary: GET /wp/v2/template-parts/lookup
-      description: WordPress REST API route `/wp/v2/template-parts/lookup` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/template-parts/lookup` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -12429,8 +12192,7 @@ paths:
         in: query
         schema:
           type: string
-        description: The template prefix for the created template. This is used to extract the main template
-          type, e.g. in `taxonomy-books` extracts the `taxonomy`
+        description: The template prefix for the created template. This is used to extract the main template type, e.g. in `taxonomy-books` extracts the `taxonomy`
       responses:
         '200':
           description: Success
@@ -12453,8 +12215,7 @@ paths:
     get:
       operationId: getWpV2Templates
       summary: GET /wp/v2/templates
-      description: WordPress REST API route `/wp/v2/templates` in namespace `wp/v2`, as advertised by
-        the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/templates` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -12504,8 +12265,7 @@ paths:
     post:
       operationId: createWpV2Templates
       summary: POST /wp/v2/templates
-      description: WordPress REST API route `/wp/v2/templates` in namespace `wp/v2`, as advertised by
-        the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/templates` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -12580,9 +12340,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)`.
     get:
       operationId: getWpV2TemplatesById
-      summary: GET /wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
-      description: WordPress REST API route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
+      description: WordPress REST API route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -12616,9 +12375,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2TemplatesById
-      summary: POST /wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
-      description: WordPress REST API route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
+      description: WordPress REST API route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -12679,9 +12437,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2TemplatesById
-      summary: PUT /wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
-      description: WordPress REST API route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
+      description: WordPress REST API route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -12742,9 +12499,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2TemplatesById2
-      summary: PATCH /wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
-      description: WordPress REST API route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
+      description: WordPress REST API route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -12805,9 +12561,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2TemplatesById
-      summary: DELETE /wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
-      description: WordPress REST API route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)
+      description: WordPress REST API route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -12845,9 +12600,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves`.
     get:
       operationId: getWpV2TemplatesByIdAutosaves
-      summary: GET /wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves
-      description: WordPress REST API route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/auto…
+      description: WordPress REST API route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -12881,9 +12635,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2TemplatesByIdAutosaves
-      summary: POST /wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves
-      description: WordPress REST API route `/wp/v2/templates/(?P<id>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/aut…
+      description: WordPress REST API route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -12958,9 +12711,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2TemplatesByParentAutosavesById
-      summary: GET /wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/auto…
+      description: WordPress REST API route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/autosaves/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -13002,9 +12754,8 @@ paths:
       description: Path segment `parent` from the WordPress route pattern `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions`.
     get:
       operationId: getWpV2TemplatesByParentRevisions
-      summary: GET /wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions
-      description: WordPress REST API route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revi…
+      description: WordPress REST API route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -13112,9 +12863,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2TemplatesByParentRevisionsById
-      summary: GET /wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revi…
+      description: WordPress REST API route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -13148,9 +12898,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2TemplatesByParentRevisionsById
-      summary: DELETE /wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/templates/(?P<parent>([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P<id>[\d]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/r…
+      description: WordPress REST API route `/wp/v2/templates/(?P([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)[\/\w%-]+)/revisions/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -13182,8 +12931,7 @@ paths:
     get:
       operationId: getWpV2TemplatesLookup
       summary: GET /wp/v2/templates/lookup
-      description: WordPress REST API route `/wp/v2/templates/lookup` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/templates/lookup` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -13202,8 +12950,7 @@ paths:
         in: query
         schema:
           type: string
-        description: The template prefix for the created template. This is used to extract the main template
-          type, e.g. in `taxonomy-books` extracts the `taxonomy`
+        description: The template prefix for the created template. This is used to extract the main template type, e.g. in `taxonomy-books` extracts the `taxonomy`
       responses:
         '200':
           description: Success
@@ -13226,8 +12973,7 @@ paths:
     get:
       operationId: getWpV2Themes
       summary: GET /wp/v2/themes
-      description: WordPress REST API route `/wp/v2/themes` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/themes` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -13266,9 +13012,8 @@ paths:
       description: Path segment `stylesheet` from the WordPress route pattern `/wp/v2/themes/(?P<stylesheet>[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)`.
     get:
       operationId: getWpV2ThemesByStylesheet
-      summary: GET /wp/v2/themes/(?P<stylesheet>[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)
-      description: WordPress REST API route `/wp/v2/themes/(?P<stylesheet>[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/themes/(?P[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)
+      description: WordPress REST API route `/wp/v2/themes/(?P[^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       responses:
@@ -13293,8 +13038,7 @@ paths:
     get:
       operationId: getWpV2Types
       summary: GET /wp/v2/types
-      description: WordPress REST API route `/wp/v2/types` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/types` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -13336,9 +13080,8 @@ paths:
       description: Path segment `type` from the WordPress route pattern `/wp/v2/types/(?P<type>[\w-]+)`.
     get:
       operationId: getWpV2TypesByType
-      summary: GET /wp/v2/types/(?P<type>[\w-]+)
-      description: WordPress REST API route `/wp/v2/types/(?P<type>[\w-]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/types/(?P[\w-]+)
+      description: WordPress REST API route `/wp/v2/types/(?P[\w-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -13374,8 +13117,7 @@ paths:
     get:
       operationId: getWpV2Users
       summary: GET /wp/v2/users
-      description: WordPress REST API route `/wp/v2/users` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/users` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -13464,16 +13206,14 @@ paths:
           type: array
           items:
             type: string
-        description: Limit result set to users matching at least one specific role provided. Accepts csv
-          list or single role.
+        description: Limit result set to users matching at least one specific role provided. Accepts csv list or single role.
       - name: capabilities
         in: query
         schema:
           type: array
           items:
             type: string
-        description: Limit result set to users matching at least one specific capability provided. Accepts
-          csv list or single capability.
+        description: Limit result set to users matching at least one specific capability provided. Accepts csv list or single capability.
       - name: who
         in: query
         schema:
@@ -13515,8 +13255,7 @@ paths:
     post:
       operationId: createWpV2Users
       summary: POST /wp/v2/users
-      description: WordPress REST API route `/wp/v2/users` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/users` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -13602,9 +13341,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/users/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2UsersById
-      summary: GET /wp/v2/users/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/users/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/users/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/users/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -13638,9 +13376,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2UsersById
-      summary: POST /wp/v2/users/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/users/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/users/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/users/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -13714,9 +13451,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2UsersById
-      summary: PUT /wp/v2/users/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/users/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/users/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/users/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -13790,9 +13526,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2UsersById2
-      summary: PATCH /wp/v2/users/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/users/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/users/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/users/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -13866,9 +13601,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2UsersById
-      summary: DELETE /wp/v2/users/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/users/(?P<id>[\d]+)` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/users/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/users/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -13912,9 +13646,8 @@ paths:
       description: Path segment `user_id` from the WordPress route pattern `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords`.
     get:
       operationId: getWpV2UsersByUserIdApplicationPasswords
-      summary: GET /wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords
-      description: WordPress REST API route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/users/(?P(?:[\d]+|me))/application-passwords
+      description: WordPress REST API route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -13948,9 +13681,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2UsersByUserIdApplicationPasswords
-      summary: POST /wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords
-      description: WordPress REST API route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/users/(?P(?:[\d]+|me))/application-passwords
+      description: WordPress REST API route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -13964,8 +13696,7 @@ paths:
               properties:
                 app_id:
                   type: string
-                  description: A UUID provided by the application to uniquely identify it. It is recommended
-                    to use an UUID v5 with the URL or DNS namespace.
+                  description: A UUID provided by the application to uniquely identify it. It is recommended to use an UUID v5 with the URL or DNS namespace.
                 name:
                   type: string
                   description: The name of the application password.
@@ -13989,9 +13720,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2UsersByUserIdApplicationPasswords
-      summary: DELETE /wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords
-      description: WordPress REST API route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/users/(?P(?:[\d]+|me))/application-passwords
+      description: WordPress REST API route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       responses:
@@ -14028,9 +13758,8 @@ paths:
       description: Path segment `uuid` from the WordPress route pattern `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)`.
     get:
       operationId: getWpV2UsersByUserIdApplicationPasswordsByUuid
-      summary: GET /wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)
-      description: WordPress REST API route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/users/(?P(?:[\d]+|me))/application-passwords/(?P[\w\-]+)
+      description: WordPress REST API route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords/(?P[\w\-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -14064,9 +13793,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2UsersByUserIdApplicationPasswordsByUuid
-      summary: POST /wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)
-      description: WordPress REST API route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/users/(?P(?:[\d]+|me))/application-passwords/(?P[\w\-]+)
+      description: WordPress REST API route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords/(?P[\w\-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -14078,8 +13806,7 @@ paths:
               properties:
                 app_id:
                   type: string
-                  description: A UUID provided by the application to uniquely identify it. It is recommended
-                    to use an UUID v5 with the URL or DNS namespace.
+                  description: A UUID provided by the application to uniquely identify it. It is recommended to use an UUID v5 with the URL or DNS namespace.
                 name:
                   type: string
                   description: The name of the application password.
@@ -14103,9 +13830,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2UsersByUserIdApplicationPasswordsByUuid
-      summary: PUT /wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)
-      description: WordPress REST API route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/users/(?P(?:[\d]+|me))/application-passwords/(?P[\w\-]+)
+      description: WordPress REST API route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords/(?P[\w\-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -14117,8 +13843,7 @@ paths:
               properties:
                 app_id:
                   type: string
-                  description: A UUID provided by the application to uniquely identify it. It is recommended
-                    to use an UUID v5 with the URL or DNS namespace.
+                  description: A UUID provided by the application to uniquely identify it. It is recommended to use an UUID v5 with the URL or DNS namespace.
                 name:
                   type: string
                   description: The name of the application password.
@@ -14142,9 +13867,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2UsersByUserIdApplicationPasswordsByUuid2
-      summary: PATCH /wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)
-      description: WordPress REST API route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/users/(?P(?:[\d]+|me))/application-passwords/(?P[\w\-]+)
+      description: WordPress REST API route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords/(?P[\w\-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -14156,8 +13880,7 @@ paths:
               properties:
                 app_id:
                   type: string
-                  description: A UUID provided by the application to uniquely identify it. It is recommended
-                    to use an UUID v5 with the URL or DNS namespace.
+                  description: A UUID provided by the application to uniquely identify it. It is recommended to use an UUID v5 with the URL or DNS namespace.
                 name:
                   type: string
                   description: The name of the application password.
@@ -14181,9 +13904,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2UsersByUserIdApplicationPasswordsByUuid
-      summary: DELETE /wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)
-      description: WordPress REST API route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/(?P<uuid>[\w\-]+)`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/users/(?P(?:[\d]+|me))/application-passwords/(?P[\w\-]+)
+      description: WordPress REST API route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords/(?P[\w\-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       responses:
@@ -14214,9 +13936,8 @@ paths:
       description: Path segment `user_id` from the WordPress route pattern `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/introspect`.
     get:
       operationId: getWpV2UsersByUserIdApplicationPasswordsIntrospect
-      summary: GET /wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/introspect
-      description: WordPress REST API route `/wp/v2/users/(?P<user_id>(?:[\d]+|me))/application-passwords/introspect`
-        in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/users/(?P(?:[\d]+|me))/application-passwords/introspect
+      description: WordPress REST API route `/wp/v2/users/(?P(?:[\d]+|me))/application-passwords/introspect` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -14252,8 +13973,7 @@ paths:
     get:
       operationId: getWpV2UsersMe
       summary: GET /wp/v2/users/me
-      description: WordPress REST API route `/wp/v2/users/me` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/users/me` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -14288,8 +14008,7 @@ paths:
     post:
       operationId: createWpV2UsersMe
       summary: POST /wp/v2/users/me
-      description: WordPress REST API route `/wp/v2/users/me` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/users/me` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -14364,8 +14083,7 @@ paths:
     put:
       operationId: updateWpV2UsersMe
       summary: PUT /wp/v2/users/me
-      description: WordPress REST API route `/wp/v2/users/me` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/users/me` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -14440,8 +14158,7 @@ paths:
     patch:
       operationId: updateWpV2UsersMe2
       summary: PATCH /wp/v2/users/me
-      description: WordPress REST API route `/wp/v2/users/me` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/users/me` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -14516,8 +14233,7 @@ paths:
     delete:
       operationId: deleteWpV2UsersMe
       summary: DELETE /wp/v2/users/me
-      description: WordPress REST API route `/wp/v2/users/me` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/users/me` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -14555,8 +14271,7 @@ paths:
     get:
       operationId: getWpV2WidgetTypes
       summary: GET /wp/v2/widget-types
-      description: WordPress REST API route `/wp/v2/widget-types` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/widget-types` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -14598,9 +14313,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/widget-types/(?P<id>[a-zA-Z0-9_-]+)`.
     get:
       operationId: getWpV2WidgetTypesById
-      summary: GET /wp/v2/widget-types/(?P<id>[a-zA-Z0-9_-]+)
-      description: WordPress REST API route `/wp/v2/widget-types/(?P<id>[a-zA-Z0-9_-]+)` in namespace
-        `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/widget-types/(?P[a-zA-Z0-9_-]+)
+      description: WordPress REST API route `/wp/v2/widget-types/(?P[a-zA-Z0-9_-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -14642,9 +14356,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/widget-types/(?P<id>[a-zA-Z0-9_-]+)/encode`.
     post:
       operationId: createWpV2WidgetTypesByIdEncode
-      summary: POST /wp/v2/widget-types/(?P<id>[a-zA-Z0-9_-]+)/encode
-      description: WordPress REST API route `/wp/v2/widget-types/(?P<id>[a-zA-Z0-9_-]+)/encode` in namespace
-        `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/widget-types/(?P[a-zA-Z0-9_-]+)/encode
+      description: WordPress REST API route `/wp/v2/widget-types/(?P[a-zA-Z0-9_-]+)/encode` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -14688,9 +14401,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/widget-types/(?P<id>[a-zA-Z0-9_-]+)/render`.
     post:
       operationId: createWpV2WidgetTypesByIdRender
-      summary: POST /wp/v2/widget-types/(?P<id>[a-zA-Z0-9_-]+)/render
-      description: WordPress REST API route `/wp/v2/widget-types/(?P<id>[a-zA-Z0-9_-]+)/render` in namespace
-        `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/widget-types/(?P[a-zA-Z0-9_-]+)/render
+      description: WordPress REST API route `/wp/v2/widget-types/(?P[a-zA-Z0-9_-]+)/render` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -14725,8 +14437,7 @@ paths:
     get:
       operationId: getWpV2Widgets
       summary: GET /wp/v2/widgets
-      description: WordPress REST API route `/wp/v2/widgets` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/widgets` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -14766,8 +14477,7 @@ paths:
     post:
       operationId: createWpV2Widgets
       summary: POST /wp/v2/widgets
-      description: WordPress REST API route `/wp/v2/widgets` in namespace `wp/v2`, as advertised by the
-        live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/widgets` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -14794,8 +14504,7 @@ paths:
                   description: Instance settings of the widget, if supported.
                 form_data:
                   type: string
-                  description: URL-encoded form data from the widget admin form. Used to update a widget
-                    that does not support instance. Write only.
+                  description: URL-encoded form data from the widget admin form. Used to update a widget that does not support instance. Write only.
       responses:
         '200':
           description: Success
@@ -14824,9 +14533,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/widgets/(?P<id>[\w\-]+)`.
     get:
       operationId: getWpV2WidgetsById
-      summary: GET /wp/v2/widgets/(?P<id>[\w\-]+)
-      description: WordPress REST API route `/wp/v2/widgets/(?P<id>[\w\-]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/widgets/(?P[\w\-]+)
+      description: WordPress REST API route `/wp/v2/widgets/(?P[\w\-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -14860,9 +14568,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2WidgetsById
-      summary: POST /wp/v2/widgets/(?P<id>[\w\-]+)
-      description: WordPress REST API route `/wp/v2/widgets/(?P<id>[\w\-]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/widgets/(?P[\w\-]+)
+      description: WordPress REST API route `/wp/v2/widgets/(?P[\w\-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -14883,8 +14590,7 @@ paths:
                   description: Instance settings of the widget, if supported.
                 form_data:
                   type: string
-                  description: URL-encoded form data from the widget admin form. Used to update a widget
-                    that does not support instance. Write only.
+                  description: URL-encoded form data from the widget admin form. Used to update a widget that does not support instance. Write only.
       responses:
         '200':
           description: Success
@@ -14905,9 +14611,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2WidgetsById
-      summary: PUT /wp/v2/widgets/(?P<id>[\w\-]+)
-      description: WordPress REST API route `/wp/v2/widgets/(?P<id>[\w\-]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/widgets/(?P[\w\-]+)
+      description: WordPress REST API route `/wp/v2/widgets/(?P[\w\-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -14928,8 +14633,7 @@ paths:
                   description: Instance settings of the widget, if supported.
                 form_data:
                   type: string
-                  description: URL-encoded form data from the widget admin form. Used to update a widget
-                    that does not support instance. Write only.
+                  description: URL-encoded form data from the widget admin form. Used to update a widget that does not support instance. Write only.
       responses:
         '200':
           description: Success
@@ -14950,9 +14654,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2WidgetsById2
-      summary: PATCH /wp/v2/widgets/(?P<id>[\w\-]+)
-      description: WordPress REST API route `/wp/v2/widgets/(?P<id>[\w\-]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/widgets/(?P[\w\-]+)
+      description: WordPress REST API route `/wp/v2/widgets/(?P[\w\-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -14973,8 +14676,7 @@ paths:
                   description: Instance settings of the widget, if supported.
                 form_data:
                   type: string
-                  description: URL-encoded form data from the widget admin form. Used to update a widget
-                    that does not support instance. Write only.
+                  description: URL-encoded form data from the widget admin form. Used to update a widget that does not support instance. Write only.
       responses:
         '200':
           description: Success
@@ -14995,9 +14697,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2WidgetsById
-      summary: DELETE /wp/v2/widgets/(?P<id>[\w\-]+)
-      description: WordPress REST API route `/wp/v2/widgets/(?P<id>[\w\-]+)` in namespace `wp/v2`, as
-        advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/widgets/(?P[\w\-]+)
+      description: WordPress REST API route `/wp/v2/widgets/(?P[\w\-]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -15028,8 +14729,7 @@ paths:
     get:
       operationId: getWpV2WpPatternCategory
       summary: GET /wp/v2/wp_pattern_category
-      description: WordPress REST API route `/wp/v2/wp_pattern_category` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/wp_pattern_category` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -15144,8 +14844,7 @@ paths:
     post:
       operationId: createWpV2WpPatternCategory
       summary: POST /wp/v2/wp_pattern_category
-      description: WordPress REST API route `/wp/v2/wp_pattern_category` in namespace `wp/v2`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp/v2/wp_pattern_category` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -15197,9 +14896,8 @@ paths:
       description: Path segment `id` from the WordPress route pattern `/wp/v2/wp_pattern_category/(?P<id>[\d]+)`.
     get:
       operationId: getWpV2WpPatternCategoryById
-      summary: GET /wp/v2/wp_pattern_category/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/wp_pattern_category/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp/v2/wp_pattern_category/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/wp_pattern_category/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -15233,9 +14931,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpV2WpPatternCategoryById
-      summary: POST /wp/v2/wp_pattern_category/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/wp_pattern_category/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp/v2/wp_pattern_category/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/wp_pattern_category/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -15277,9 +14974,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpV2WpPatternCategoryById
-      summary: PUT /wp/v2/wp_pattern_category/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/wp_pattern_category/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp/v2/wp_pattern_category/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/wp_pattern_category/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -15321,9 +15017,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpV2WpPatternCategoryById2
-      summary: PATCH /wp/v2/wp_pattern_category/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/wp_pattern_category/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp/v2/wp_pattern_category/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/wp_pattern_category/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       requestBody:
@@ -15365,9 +15060,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpV2WpPatternCategoryById
-      summary: DELETE /wp/v2/wp_pattern_category/(?P<id>[\d]+)
-      description: WordPress REST API route `/wp/v2/wp_pattern_category/(?P<id>[\d]+)` in namespace `wp/v2`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp/v2/wp_pattern_category/(?P[\d]+)
+      description: WordPress REST API route `/wp/v2/wp_pattern_category/(?P[\d]+)` in namespace `wp/v2`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp/v2
       parameters:
@@ -15399,8 +15093,7 @@ components:
   schemas:
     WPError:
       type: object
-      description: The WordPress REST API error envelope, observed verbatim on live 401/404 responses
-        from this host. Not RFC 9457 problem+json.
+      description: The WordPress REST API error envelope, observed verbatim on live 401/404 responses from this host. Not RFC 9457 problem+json.
       properties:
         code:
           type: string

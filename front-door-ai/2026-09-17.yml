@@ -1,0 +1,27 @@
+# Front Door AI Index — interpublic — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: interpublic
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.interpublic.com
+  final_host: www.omc.com
+  ownership: inherited
+  owner: interpublic
+  shares_host_with: null
+  inherited_from: www.omc.com
+  verdict: scored
+  score: null
+  host_score: 2
+  density: null
+  words: 393
+  tiers:
+    agentic: 0
+    core: 2
+    model: 0
+  ambiguous: 4
+  top_terms:
+    intelligence: 3
+    AI: 2
+    predictive: 1

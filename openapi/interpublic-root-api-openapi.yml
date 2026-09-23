@@ -3,24 +3,7 @@ info:
   title: Interpublic Group WordPress REST Root API
   version: root
   summary: The live WordPress REST API served by the Interpublic Group corporate website.
-  description: 'Derived verbatim from the route-discovery document the Interpublic Group web server publishes
-    at https://interpublic.com/wp-json/ (fetched 2026-08-12, HTTP 200). Every path, method, parameter
-    name, type, default and enum in this document was read from that live response; nothing was invented.
-
-
-    This is the content-management API of the corporate marketing site, not a product API. Interpublic
-    Group is an advertising and marketing-services holding company and publishes no developer product
-    API at the holding-company level. The surface is included because it is a real, live, self-describing
-    HTTP contract on the provider''s own host: the apex https://interpublic.com still serves the WordPress
-    origin (346 posts, X-WP-Total observed) while www.interpublic.com 301-redirects to omc.com following
-    the Omnicom acquisition.
-
-
-    Only the WordPress core namespaces are represented (`wp/v2`, `wp-abilities/v1`, `oembed/1.0`, root).
-    Third-party plugin namespaces advertised by the same discovery document (yoast/v1, redirection/v1,
-    webdev-insight/v1, wordfence/v1, accessibility-suite/v1, aam/v2, wp-offload-media/v1, wpe_sign_on_plugin/v1,
-    wpe/cache-plugin/v1, wr/v1, fluent-smtp, ada-plugin/v1, wp-site-health/v1, wp-block-editor/v1) are
-    intentionally excluded as vendor plugin internals.'
+  description: Derived verbatim from the route-discovery document the Interpublic Group web server publishes at https://interpublic.com/wp-json/ (fetched 2026-08-12, HTTP 200).
   x-derived-from: https://interpublic.com/wp-json/
   x-derived-on: '2026-08-12'
   x-apievangelist-method: derived
@@ -28,17 +11,16 @@ servers:
 - url: https://interpublic.com
   description: Production origin (apex host; www 301s to omc.com)
 tags:
-- name: root
+- name: Root
   description: REST API index / namespace discovery.
 paths:
   /wp-json/:
     get:
       operationId: getWpJsonIndex
       summary: GET /
-      description: WordPress REST API route `/` in namespace `root`, as advertised by the live route-discovery
-        document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/` in namespace `root`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
-      - root
+      - Root
       parameters:
       - name: context
         in: query
@@ -66,10 +48,9 @@ paths:
     post:
       operationId: createBatchV1
       summary: POST /batch/v1
-      description: WordPress REST API route `/batch/v1` in namespace `root`, as advertised by the live
-        route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/batch/v1` in namespace `root`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
-      - root
+      - Root
       requestBody:
         required: true
         content:
@@ -111,8 +92,7 @@ components:
   schemas:
     WPError:
       type: object
-      description: The WordPress REST API error envelope, observed verbatim on live 401/404 responses
-        from this host. Not RFC 9457 problem+json.
+      description: The WordPress REST API error envelope, observed verbatim on live 401/404 responses from this host. Not RFC 9457 problem+json.
       properties:
         code:
           type: string

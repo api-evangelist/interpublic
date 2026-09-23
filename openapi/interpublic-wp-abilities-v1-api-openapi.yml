@@ -1,26 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Interpublic Group WordPress REST wp-abilities/v1 API
+  title: Interpublic Group WordPress REST Wp Abilities/v1 API
   version: wp-abilities/v1
   summary: The live WordPress REST API served by the Interpublic Group corporate website.
-  description: 'Derived verbatim from the route-discovery document the Interpublic Group web server publishes
-    at https://interpublic.com/wp-json/ (fetched 2026-08-12, HTTP 200). Every path, method, parameter
-    name, type, default and enum in this document was read from that live response; nothing was invented.
-
-
-    This is the content-management API of the corporate marketing site, not a product API. Interpublic
-    Group is an advertising and marketing-services holding company and publishes no developer product
-    API at the holding-company level. The surface is included because it is a real, live, self-describing
-    HTTP contract on the provider''s own host: the apex https://interpublic.com still serves the WordPress
-    origin (346 posts, X-WP-Total observed) while www.interpublic.com 301-redirects to omc.com following
-    the Omnicom acquisition.
-
-
-    Only the WordPress core namespaces are represented (`wp/v2`, `wp-abilities/v1`, `oembed/1.0`, root).
-    Third-party plugin namespaces advertised by the same discovery document (yoast/v1, redirection/v1,
-    webdev-insight/v1, wordfence/v1, accessibility-suite/v1, aam/v2, wp-offload-media/v1, wpe_sign_on_plugin/v1,
-    wpe/cache-plugin/v1, wr/v1, fluent-smtp, ada-plugin/v1, wp-site-health/v1, wp-block-editor/v1) are
-    intentionally excluded as vendor plugin internals.'
+  description: Derived verbatim from the route-discovery document the Interpublic Group web server publishes at https://interpublic.com/wp-json/ (fetched 2026-08-12, HTTP 200).
   x-derived-from: https://interpublic.com/wp-json/
   x-derived-on: '2026-08-12'
   x-apievangelist-method: derived
@@ -29,15 +12,13 @@ servers:
   description: Production origin (apex host; www 301s to omc.com)
 tags:
 - name: wp-abilities/v1
-  description: WordPress Abilities API - registry of named abilities an agent may discover and run. Capability-gated
-    (observed HTTP 401 anonymously).
+  description: WordPress Abilities API - registry of named abilities an agent may discover and run. Capability-gated (observed HTTP 401 anonymously).
 paths:
   /wp-json/wp-abilities/v1:
     get:
       operationId: getWpAbilitiesV1
       summary: GET /wp-abilities/v1
-      description: WordPress REST API route `/wp-abilities/v1` in namespace `wp-abilities/v1`, as advertised
-        by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp-abilities/v1` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp-abilities/v1
       parameters:
@@ -71,8 +52,7 @@ paths:
     get:
       operationId: getWpAbilitiesV1Abilities
       summary: GET /wp-abilities/v1/abilities
-      description: WordPress REST API route `/wp-abilities/v1/abilities` in namespace `wp-abilities/v1`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp-abilities/v1/abilities` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp-abilities/v1
       parameters:
@@ -131,9 +111,8 @@ paths:
       description: Path segment `name` from the WordPress route pattern `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+)`.
     get:
       operationId: getWpAbilitiesV1AbilitiesByName
-      summary: GET /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+)
-      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+)` in
-        namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+)
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+)` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp-abilities/v1
       responses:
@@ -164,9 +143,8 @@ paths:
       description: Path segment `name` from the WordPress route pattern `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run`.
     get:
       operationId: getWpAbilitiesV1AbilitiesByNameRun
-      summary: GET /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run
-      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run`
-        in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp-abilities/v1
       parameters:
@@ -195,9 +173,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     post:
       operationId: createWpAbilitiesV1AbilitiesByNameRun
-      summary: POST /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run
-      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run`
-        in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: POST /wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp-abilities/v1
       requestBody:
@@ -230,9 +207,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     put:
       operationId: updateWpAbilitiesV1AbilitiesByNameRun
-      summary: PUT /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run
-      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run`
-        in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PUT /wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp-abilities/v1
       requestBody:
@@ -265,9 +241,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     patch:
       operationId: updateWpAbilitiesV1AbilitiesByNameRun2
-      summary: PATCH /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run
-      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run`
-        in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: PATCH /wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp-abilities/v1
       requestBody:
@@ -300,9 +275,8 @@ paths:
                 $ref: '#/components/schemas/WPError'
     delete:
       operationId: deleteWpAbilitiesV1AbilitiesByNameRun
-      summary: DELETE /wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run
-      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\-\/]+?)/run`
-        in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: DELETE /wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run
+      description: WordPress REST API route `/wp-abilities/v1/abilities/(?P[a-zA-Z0-9\-\/]+?)/run` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp-abilities/v1
       parameters:
@@ -333,8 +307,7 @@ paths:
     get:
       operationId: getWpAbilitiesV1Categories
       summary: GET /wp-abilities/v1/categories
-      description: WordPress REST API route `/wp-abilities/v1/categories` in namespace `wp-abilities/v1`,
-        as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      description: WordPress REST API route `/wp-abilities/v1/categories` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp-abilities/v1
       parameters:
@@ -388,9 +361,8 @@ paths:
       description: Path segment `slug` from the WordPress route pattern `/wp-abilities/v1/categories/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)`.
     get:
       operationId: getWpAbilitiesV1CategoriesBySlug
-      summary: GET /wp-abilities/v1/categories/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)
-      description: WordPress REST API route `/wp-abilities/v1/categories/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)`
-        in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
+      summary: GET /wp-abilities/v1/categories/(?P[a-z0-9]+(?:-[a-z0-9]+)*)
+      description: WordPress REST API route `/wp-abilities/v1/categories/(?P[a-z0-9]+(?:-[a-z0-9]+)*)` in namespace `wp-abilities/v1`, as advertised by the live route-discovery document at https://interpublic.com/wp-json/.
       tags:
       - wp-abilities/v1
       responses:
@@ -415,8 +387,7 @@ components:
   schemas:
     WPError:
       type: object
-      description: The WordPress REST API error envelope, observed verbatim on live 401/404 responses
-        from this host. Not RFC 9457 problem+json.
+      description: The WordPress REST API error envelope, observed verbatim on live 401/404 responses from this host. Not RFC 9457 problem+json.
       properties:
         code:
           type: string
