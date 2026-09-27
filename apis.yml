@@ -66,7 +66,6 @@ apis:
       with the WordPress error envelope. Derived verbatim from the live
       route-discovery document at https://interpublic.com/wp-json/.
     humanURL: https://developer.wordpress.org/rest-api/
-    baseURL: https://interpublic.com
     tags:
       - Content
       - JSON
@@ -93,7 +92,6 @@ apis:
       (`rest_forbidden`) anonymously, and a control path on the same host
       answers 404, so the surface exists and is capability-gated.
     humanURL: https://developer.wordpress.org/rest-api/
-    baseURL: https://interpublic.com
     tags:
       - Abilities
       - Agents
@@ -110,7 +108,6 @@ apis:
       WordPress install, returning embeddable representations of newsroom
       URLs. Observed HTTP 200 anonymously.
     humanURL: https://oembed.com/
-    baseURL: https://interpublic.com
     tags:
       - oEmbed
       - Embed
@@ -118,25 +115,20 @@ apis:
     properties:
       - type: OpenAPI
         url: openapi/interpublic-oembed-1-0-api-openapi.yml
-  - aid: interpublic:root-api
-    name: Interpublic Group WordPress REST Index API
-    description: >-
-      The REST API index / namespace-discovery route. GET
-      https://interpublic.com/wp-json/ returns the self-describing document
-      that enumerates all 254 routes across 17 namespaces, along with site
-      identity (name "IPG", url https://www.interpublic.com). This document
-      is the source every other spec in this repository was derived from.
-    humanURL: https://interpublic.com/wp-json/
-    baseURL: https://interpublic.com
+  - aid: interpublic:interpublic-com-website-wordpress-rest
+    name: Interpublic Group Website (WordPress REST)
+    description: 'The public WordPress REST API (wp-json) of the Interpublic Group website at interpublic.com:
+      the route index of the site''s content management system, catalogued as one site surface rather than
+      as separate APIs.'
+    baseURL: https://interpublic.com/wp-json
     tags:
-      - Discovery
-      - Index
-      - WordPress
+    - WordPress
+    x-surface: platform-generated
     properties:
-      - type: OpenAPI
-        url: openapi/interpublic-root-api-openapi.yml
-      - type: DiscoveryDocument
-        url: openapi/interpublic-wp-rest-discovery-original.json
+    - type: Documentation
+      url: https://interpublic.com/wp-json
+    x-platform: wordpress
+    x-platform-surface: rest
 common:
   - type: DomainSecurity
     url: security/interpublic-domain-security.yml
