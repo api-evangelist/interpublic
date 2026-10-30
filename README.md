@@ -1,4 +1,4 @@
-# Interpublic Group (interpublic)
+# Interpublic Group
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,53 +64,121 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-The Interpublic Group of Companies (IPG) is one of the world's largest
-advertising and marketing services holding companies, with networks including
-McCann Worldgroup, IPG Mediabrands, FCB, MullenLowe Group, and Acxiom. In
-2024 Omnicom announced its acquisition of IPG and operates combined brand
-operations under omc.com. IPG does not publish a unified public developer
-portal or open REST APIs; technology surfaces are delivered through
-agency-network products such as Acxiom data services and Mediabrands'
-identity and measurement platforms.
+The Interpublic Group of Companies (IPG) is one of the world's largest advertising and marketing services holding companies, with networks including McCann Worldgroup, IPG Mediabrands, FCB, MullenLowe Group, and Acxiom. In 2024 Omnicom announced its acquisition of IPG; the combined brand operations now run under omc.com, and www.interpublic.com 301-redirects there. IPG publishes no unified public developer portal and no product REST API at the holding-company level - technology surfaces are delivered through agency-network products such as Acxiom data services and Mediabrands' identity and measurement platforms, all partner-gated. The one live, machine-readable HTTP contract on IPG's own host is the WordPress REST API still served from the apex interpublic.com origin, which carries the corporate newsroom (346 posts) and advertises 254 routes across 17 namespaces through its self-describing route-discovery document.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/interpublic/refs/heads/main/apis.yml)
+**Areas:** Advertising · Marketing · Fortune 500 · Holding Company · Media · Content · WordPress · Newsroom
 
-## Scope
+## Interpublic Group on APIs.io
 
-- **Type:** Index
-- **Position:** Consuming
-- **Access:** Private
+Everything profiled for Interpublic Group is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/interpublic/](https://apis.io/providers/interpublic/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (4)
 
-- Advertising
-- Marketing
-- Fortune 500
-- Holding Company
-- Media
+- [Interpublic Group WordPress Wp/v2 API](https://apis.io/apis/interpublic/wp-v2-api/) — WordPress core content API for the Interpublic Group corporate site - posts, pages, media, taxonomies, users, settings, blocks and templates. Read…
+- [Interpublic Group WordPress Abilities API](https://apis.io/apis/interpublic/wp-abilities-v1-api/) — WordPress Abilities API - the registry of named abilities an agent may discover and run on this install. Present in the route-discovery document with six…
+- [Interpublic Group oEmbed API](https://apis.io/apis/interpublic/oembed-1-0-api/) — oEmbed discovery and proxy endpoints exposed by the Interpublic Group WordPress install, returning embeddable representations of newsroom URLs. Observed…
+- [Interpublic Group Website (WordPress REST)](https://apis.io/apis/interpublic/interpublic-com-website-wordpress-rest/) — The public WordPress REST API (wp-json) of the Interpublic Group website at interpublic.com: the route index of the site's content management system,…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-21
-- **Modified:** 2026-04-28
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Collections (5)
 
-No public REST APIs are published by Interpublic Group at the holding-company
-level. Developer-facing surfaces exist inside individual networks (Acxiom,
-IPG Mediabrands) and are typically partner-gated. This repository will be
-extended if and when IPG or its successor entity publishes openly accessible
-APIs.
+Postman and Open Collection request collections.
 
-## Common Properties
+- [Interpublic Group WordPress REST oembed/1.0 API](https://apis.io/collections/interpublic/open-interpublic-oembed-1-0-api/)
+- [Moved to /providers/interpublic/](https://apis.io/collections/interpublic/open-interpublic-root-api/)
+- [Interpublic Group WordPress REST wp-abilities/v1 API](https://apis.io/collections/interpublic/open-interpublic-wp-abilities-v1-api/)
+- [API Collection](https://apis.io/collections/interpublic/open-interpublic-wp-rest-discovery-original/)
+- [Interpublic Group WordPress REST wp/v2 API](https://apis.io/collections/interpublic/open-interpublic-wp-v2-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Interpublic Wp Rest Overlay](https://apis.io/overlays/interpublic/interpublic-wp-rest-overlay/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Interpublic Group API Rules](https://apis.io/rules/interpublic/interpublic-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Interpublic Authentication](https://apis.io/security/interpublic/interpublic-authentication/)
+- [Interpublic Domain Security](https://apis.io/security/interpublic/interpublic-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Interpublic Plans Pricing](https://apis.io/plans/interpublic/interpublic-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Interpublic Rate Limits](https://apis.io/rate-limits/interpublic/interpublic-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.interpublic.com)
-- [Successor (Omnicom)](https://omc.com/)
-- [Acxiom](https://www.acxiom.com/)
-- [IPG Mediabrands](https://www.ipgmediabrands.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
+**Kin Score 15.5** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-**Email:** kin@apievangelist.com
+| Facet | Score |
+|---|---|
+| Discoverability | 53.6 |
+| Contract quality | 15.8 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 30.4 |
+| Access clarity | 0.0 |
+
+**Agent readiness 27.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/interpublic/](https://apis.io/providers/interpublic/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Interpublic Group: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/interpublic/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
